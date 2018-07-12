@@ -189,6 +189,7 @@ export default {
   .title {
     height: 80px;
     display: flex;
+    .border-1pxTop(#dcdcdc,solid);
     span {
       width: 100%;
       text-align: center;
@@ -198,12 +199,13 @@ export default {
   .content {
     padding: 0 25px;
     height: 310px;
-    border-top: 1px solid #dcdcdc;/*no*/
+    // border-top: 1px solid #dcdcdc;/*no*/
+    .border-1pxTop(#dcdcdc,solid);
   }
       .position{
         padding: 20px 0 40px 0;
-        width: 100%;
-        height: 66px;
+
+        height: 126px;
         .time{
             width: 100%;
         }
@@ -212,13 +214,15 @@ export default {
         }
     }
   .info {
-    height: 120px;
+    height: 180px;
     padding: 40px 0 20px 0;
-    border-bottom: 1px dashed #dcdcdc;/*no*/
+    // border-bottom: 1px dashed #dcdcdc;
+    .border-1pxTop(#dcdcdc,dashed);
     .left {
       width: 120px;
       height: 120px;
       img {
+          border-radius: 6px;
         width: 100%;
         height: 100%;
       }
@@ -230,12 +234,13 @@ export default {
         font-weight: bold;
         color: #333;
         span {
-          border: 1px solid #ff9120;/*no*/
+          border: 1px solid #ff9120;
           width: 60px;
           height: 30px;
           text-align: center;
           line-height: 30px;
-          font-size: 20px;
+          font-size: 22px;
+          font-weight: normal;
           color: #ff9120;
           margin-left: 12px;
           border-radius: 6px;

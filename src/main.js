@@ -9,15 +9,16 @@ import 'lib-flexible/flexible.js'
 import '@/common/css/reset.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-
+//axios相关
+import axios from 'axios'
+Vue.prototype.$axios = axios
+axios.defaults.withCredentials = true
 
 fastclick.attach(document.body)
 Vue.config.productionTip = false
 Vue.use(MintUI)
 Vue.use(VueRouter)
 //如有相关在这里
-import top from './components/top-position/top.vue'
-import list from './components/index-list/list.vue'
 import ballroom from './components/index/ballroom/room.vue'
 import shequ from './components/index/shequ/shequ.vue'
 import mine from './components/index/mine/mine.vue'

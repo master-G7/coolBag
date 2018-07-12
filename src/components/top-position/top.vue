@@ -4,7 +4,6 @@
     <div class="top">
       <div class="search">
         <span class="position">深圳</span>
-        <i class="el-icon-arrow-down"></i>
         <input type="text" id="search_info">
       </div>
     </div>
@@ -71,7 +70,7 @@ export default {
 }
 .search {
   padding: 12px 30px 10px 30px;
-  height: 40px;
+  height: 50px;
   span,
   i {
     font-size: 30px;
