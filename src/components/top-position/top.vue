@@ -1,9 +1,13 @@
 <template>
   <div class="all">
     <!-- 搜索栏 -->
-    <div class="top">
+    <div class="toptop">
       <div class="search">
-        <span class="position">深圳</span>
+        <div class="city">
+          <span>{{location}}</span>
+          <i class="iconfont icon-xuandizhixiala"></i>
+        </div>
+        <i class="iconfont icon-sousuo"></i>
         <input type="text" id="search_info">
       </div>
     </div>
@@ -36,13 +40,21 @@
         <i>球房加盟</i>
       </div>
     </div>
+    <div class="map">
+      <el-amap vid="amap" :plugin="plugin" class="amap-demo" :center="center">
+      </el-amap>
+    </div>
   </div>
+
 </template>
 
 <script >
 export default {
   data() {
+    var that = this;
     return {
+      location: sessionStorage.getItem("city"),
+      isshow: false,
       slides: [
         {
           src: "http://192.168.2.128:8081/static/banner03.png",
@@ -56,68 +68,99 @@ export default {
           src: "http://192.168.2.128:8081/static/banner04.png",
           href: "JavaScript:void(0)"
         }
+      ],
+      center: [121.59996, 31.197646],
+      lng: 0,
+      lat: 0,
+      plugin: [
+        {
+          pName: "Geolocation",
+          events: {
+            init(o) {
+              o.getCurrentPosition((status, result) => {
+                var str = result.addressComponent.city;
+                var city = str.split("市").join("");
+                sessionStorage.setItem("city", city);
+                that.location = sessionStorage.getItem("city");
+              });
+            }
+          }
+        }
       ]
     };
-  }
+  },
+  methods: {}
 };
 </script>
 
 <style scoped lang="less">
 @import "../../common/css/common.less";
-.top {
+.city {
+  display: inline-block;
+}
+.toptop {
   background-color: #fff;
-  height: 80px;
+  height: 1.0667rem;
+  padding: 0.16rem 0.4rem 0.1333rem 0.4rem;
 }
 .search {
-  padding: 12px 30px 10px 30px;
-  height: 50px;
-  span,
+  position: relative;
+  height: 0.6667rem;
+  i.icon-sousuo {
+    position: absolute;
+    right: 7.1733rem;
+    top: 0.2133rem;
+  }
+  span {
+    font-size: 0.4rem;
+    color: #666;
+  }
   i {
-    font-size: 30px;
+    font-size: 0.32rem;
     color: #666;
   }
   #search_info {
     border: none;
     background-color: @bgc;
-    width: 580px;
-    height: 60px;
-    font-size: 28px;
-    border-radius: 29px;
-    text-indent: 10px;
+    width: 7.68rem;
+    height: 0.8rem;
+    font-size: 0.3733rem;
+    border-radius: 0.3867rem;
+    text-indent: 0.8533rem;
   }
 }
 .slide {
   width: 100%;
-  height: 240px;
+  height: 3.2rem;
   img {
     width: 100%;
-    height: 240px;
+    height: 3.2rem;
   }
 }
 .sort {
   display: flex;
-  display: -moz-box;  /* Firefox */ 
-  display: -ms-flexbox;    /* IE10 */ 
-  display: -webkit-box;    /* Safari */  
-  display: -webkit-flex;    /* Chrome, WebKit */ 
-  display: box;  
-  display: flexbox;    
-  height: 190px;
+  display: -moz-box; /* Firefox */
+  display: -ms-flexbox; /* IE10 */
+  display: -webkit-box; /* Safari */
+  display: -webkit-flex; /* Chrome, WebKit */
+  display: box;
+  display: flexbox;
+  height: 2.5333rem;
   background-color: #fff;
   div {
     width: 100%;
-    height: 190px;
+    height: 2.5333rem;
     span {
       display: block;
-      height: 100px;
-      width: 100px;
+      height: 1.3333rem;
+      width: 1.3333rem;
       background-repeat: no-repeat;
       background-size: 100%;
-      margin: 20px auto;
+      margin: 0.2667rem auto;
     }
     i {
       display: block;
-      font-size: 24px;
+      font-size: 0.32rem;
       text-align: center;
     }
   }
@@ -141,5 +184,8 @@ export default {
       .bg-image("../../../static/icon-index/sort-icon/jiameng");
     }
   }
+}
+.map {
+  display: none;
 }
 </style>

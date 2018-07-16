@@ -56,11 +56,11 @@ export default {
 @import '../../../src/common/css/common.less';
 .totop {
   position: fixed;
-  bottom: 150px;
-  right: 50px;
+  bottom: 2rem;
+  right: 0.6667rem;
   .bg-image("/static/float/totop");
-  width: 136px;
-  height: 136px;
+  width: 1.8133rem;
+  height: 1.8133rem;
   background-size: 100%;
   display: block;
 }

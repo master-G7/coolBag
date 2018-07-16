@@ -7,6 +7,11 @@ img{vertical-align:top;border:0;}
 ol,ul {list-style:none;}
 h1,h2,h3,h4,h5,h6{font-size:14px; font-weight:normal;}
 address,cite,code,em,th,i {font-weight:normal; font-style:normal;}
+a {
+    text-decoration:none;
+    out-line: none;
+    color:blakc;
+    }
 .fl{
     float: left;
 }
