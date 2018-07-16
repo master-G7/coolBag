@@ -341,7 +341,6 @@ export default {
     height: 1.0667rem;
     background-color: #fff;
     display: flex;
-
     // .border-0.0133remTop(#dcdcdc,solid);
     p {
       width: 100%;
@@ -352,6 +351,7 @@ export default {
         position: relative;
         color: #999;
         top: -0.0267rem;
+        font-size: 0.2133rem;
       }
     }
   }

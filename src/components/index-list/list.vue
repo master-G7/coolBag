@@ -258,6 +258,7 @@ export default {
         color: #999;
         position: relative;
         top: -0.0267rem;
+        font-size: 0.2133rem;
       }
     }
   }
