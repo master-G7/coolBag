@@ -5,11 +5,13 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import fastclick from 'fastclick'
-import 'lib-flexible/flexible.js'
+import 'lib-flexible/flexible.js' 
 import '@/common/css/reset.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './common/css/icon_font/iconfont.css'
+import dayjs from 'dayjs'
+Vue.prototype.$dayjs = dayjs
 //axios相关
 import axios from 'axios'
 Vue.prototype.$axios = axios
@@ -24,7 +26,7 @@ AMap.initAMapApiLoader({
   plugin: ['AMap.Geolocation', 'AMap.CitySearch']
 });
 fastclick.attach(document.body)
-Vue.config.productionTip = false
+Vue.config.productionTip = false                             
 Vue.use(MintUI)
 Vue.use(VueRouter)
 //如由相关在这里

@@ -1,7 +1,7 @@
 <template>
  <div class="page">
      我是社区页面
-         <!-- <bottom></bottom> -->
+         <!-- <bottom></bottom> -->             
  </div>
 </template>
 

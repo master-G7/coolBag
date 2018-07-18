@@ -45,10 +45,15 @@
           <div class="form">
             <div class="name">
               <span>球房名称</span>
-              <div class="roomname">{{room}}</div>
+              <div class="roomname">{{roomview}}</div>
               <div class="changeroom fr" @click='showpicker'>选择其他球房</div>
-              <mt-popup v-model="roonmageshow" position="bottom">
-                <mt-picker :slots="roomname" @change="onValuesChange"></mt-picker>
+              <mt-popup v-model="roonmageshow" position="bottom" lockScroll='true'>
+                <div class="confirm">
+                  <span class='fr' @click='cfmroom'>确认</span>
+                  <span class='fl' @click='closetbaleroom'>取消</span>
+                </div>
+                <mt-picker :slots="roomname" @change="onroomChange">
+                </mt-picker>
               </mt-popup>
             </div>
             <div class="gametype">
@@ -62,20 +67,55 @@
             </div>
             <div class="tablenum">
               <span>球台编号</span>
-              <div class="balltable">{{tablenum}}</div>
+              <div class="balltable" @click="showtablenums">{{tablenumvalue}}号桌</div>
+              <mt-popup v-model="showtablenum" position="bottom" lockScroll='true'>
+                <div class="confirm">
+                  <span class='fr' @click='cfmroomnum'>确认</span>
+                  <span class='fl' @click='closetbalenum'>取消</span>
+                </div>
+                <mt-picker :slots="tablenums" @change="ontableChange"></mt-picker>
+              </mt-popup>
+            </div>
+            <div class="beginTime">
+              <span>开始时间</span>
+              <div class="time" @click="timeopen">
+                {{bookingview}}
+              </div>
+              <mt-datetime-picker ref="bookingTime" v-model="bookingtimeDate" type="datetime" year-format="{value} " month-format="{value} 月" date-format="{value} 日" :startDate="bookingbegintime" :endDate="bookingendtime" @confirm="booktime">
+              </mt-datetime-picker>
+            </div>
+            <div class="durition">
+              <span>持续时长</span>
+              <div class="time" @click="showduritionTime">{{duritionTimeView}}小时</div>
+              <mt-popup v-model="showdurition" position="bottom" lockScroll='true'>
+                <div class="confirm">
+                  <span class='fr' @click='duritionConfirm'>确认</span>
+                  <span class='fl' @click='duritionCancel'>取消</span>
+                </div>
+                <mt-picker :slots="duritionNum" @change="onTimeChange"></mt-picker>
+              </mt-popup>
+            </div>
+            <div class="message">
+              <span>添加留言</span>
+              <div class="info">
+                <input type="text" v-model='message' placeholder="选填">
+              </div>
             </div>
           </div>
         </div>
+        <div class="confirmButton">立即预约</div>
       </div>
     </div>
   </div>
 </template>
 
 <script >
-import { PopupPicker, Group } from "vux";
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {
+      //留言
+      message: "",
       //游戏类型选择
       gtyperadio: "chn",
       gametypes: [
@@ -97,11 +137,12 @@ export default {
       ],
       //球房选择
       roonmageshow: false,
-      room: " ",
+      roomview: "江南七怪柯正恶 ",
+      room: "",
       roomname: [
         {
           values: [
-            "梦幻女孩陈晓满",
+            "江南七怪柯正恶",
             "无情杀手尹志平",
             "全真教主丘处机",
             "翡翠白玉洪七公",
@@ -111,26 +152,58 @@ export default {
         }
       ],
       //球桌号码
-      tablenum: "1",
-      showtablenum:'false'
+      tablenum: 1,
+      tablenumvalue: 1,
+      showtablenum: false,
+      tablenums: [
+        {
+          values: [1, 2, 3, 4, 5, 6, 7]
+        }
+      ],
+      //预定时间
+      bookingtime: " ",
+      bookingtimeDate: new Date(),
+      bookingview: this.$dayjs().format("YYYY-MM-DD HH:mm"),
+      bookingbegintime: new Date(this.$dayjs().format("YYYY/MM/DD HH:mm")),
+      bookingendtime: new Date(this.$dayjs().add(14, "day")),
+      //持续时长
+      duritionTime: 1,
+      duritionTimeView: 1,
+      showdurition: false,
+      duritionNum: [
+        {
+          values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        }
+      ]
     };
   },
-  components: {
-    PopupPicker,
-    Group
-  },
+  components: {},
   methods: {
     //显示下拉
     showpicker() {
       this.roonmageshow = true;
     },
     //显示桌号
-    showtablenum(){
+    showtablenums() {
+      this.showtablenum = true;
+    },
+    closetbalenum() {
+      this.showtablenum = false;
+    },
+    cfmroomnum() {
+      this.tablenumvalue = this.tablenum;
       this.showtablenum = false;
     },
     //球房更改
-    onValuesChange(picker, values) {
+    onroomChange(picker, values) {
       this.room = values[0];
+    },
+    closetbaleroom() {
+      this.roonmageshow = false;
+    },
+    cfmroom() {
+      this.roomview = this.room;
+      this.roonmageshow = false;
     },
     //单选框
     check(index) {
@@ -140,6 +213,42 @@ export default {
       this.gtyperadio = this.gametypes[index].value;
       this.gametypes[index].isChecked = true;
       console.log(this.gtyperadio);
+    },
+    //球桌选择
+    ontableChange(picker, values) {
+      this.tablenum = values[0];
+    },
+    //预约时间
+    timeopen() {
+      this.$refs.bookingTime.open();
+      console.log("open");
+      console.log(this.bookingbegintime);
+    },
+    booktime(value) {
+      console.log(value);
+      const time = this.$dayjs(value).format("YYYY年MM月DD日 HH时mm分");
+      console.log(time);
+      this.bookingview = time;
+
+      Toast({
+        message: "预约时间为:" + time,
+        position: "middle",
+        duration: 1000
+      });
+    },
+    //持续时间
+    showduritionTime() {
+      this.showdurition = true;
+    },
+    duritionConfirm() {
+      this.duritionTimeView = this.duritionTime;
+      this.showdurition = false;
+    },
+    onTimeChange(picker, values) {
+      this.duritionTime = values[0];
+    },
+    duritionCancel() {
+      this.showdurition = false;
     }
   }
 };
@@ -263,6 +372,16 @@ export default {
         }
         .form {
           font-size: 0.4rem;
+          .confirm {
+            padding: 0 1.2rem;
+            .border-1pxTop(#dcdcdc,solid);
+            height: 1rem;
+            span {
+              color: #0bc0fe !important;
+              display: inline-block;
+              line-height: 1rem;
+            }
+          }
           .name {
             line-height: 1.2rem;
             span {
@@ -271,7 +390,7 @@ export default {
             .border-1pxTop(#dcdcdc,solid);
             height: 1.2rem;
             .roomname {
-              color: #666;
+              color: #999;
               display: inline-block;
               margin-left: 0.5067rem;
             }
@@ -320,14 +439,80 @@ export default {
             height: 1.2rem;
             line-height: 1.2rem;
             .balltable {
+              width: 70%;
               color: #999;
               display: inline-block;
               margin-left: 0.5067rem;
             }
           }
+          .beginTime {
+            .border-1pxTop(#dcdcdc,solid);
+            height: 1.2rem;
+            line-height: 1.2rem;
+            .time {
+              color: #999;
+              display: inline-block;
+              margin-left: 0.5067rem;
+            }
+          }
+          .durition {
+            .border-1pxTop(#dcdcdc,solid);
+            height: 1.2rem;
+            line-height: 1.2rem;
+            .time {
+              color: #999;
+              display: inline-block;
+              margin-left: 0.5067rem;
+              width: 70%;
+            }
+          }
+          .message {
+            .border-1pxTop(#dcdcdc,solid);
+            height: 1.2rem;
+            line-height: 1.2rem;
+            .info {
+              color: #999;
+              display: inline-block;
+              margin-left: 0.5067rem;
+              width: 70%;
+              input {
+                border: none;
+                height: 0.9333rem;
+                font-size: 0.4rem;
+                color: #999;
+                width: 100%;
+              }
+            }
+          }
         }
       }
     }
+  }
+  .confirmButton {
+    margin-top: 0.7067rem;
+    width: 9.36rem;
+    height: 1.1733rem;
+    border-radius: 0.1067rem;
+    line-height: 1.1733rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.4rem;
+    background: -webkit-linear-gradient(
+      left,
+      #0cd0ff,
+      #0caefe
+    ); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(
+      right,
+      #0cd0ff,
+      #0caefe
+    ); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(
+      right,
+      #0cd0ff,
+      #0caefe
+    ); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #0cd0ff, #0caefe); /* 标准的语法 */
   }
 }
 </style>

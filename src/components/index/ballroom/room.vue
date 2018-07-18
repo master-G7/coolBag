@@ -272,7 +272,7 @@
                 </div>
                 <div class="position fl">
                     深圳市南山区粤美特桌球俱乐部(&lt;250m)
-                </div>
+                </div>                          
             </div>
         </div>
         <div class="content">
