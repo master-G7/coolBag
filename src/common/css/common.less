@@ -39,17 +39,17 @@
     position: relative;
     &:before{
       content: " ";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      height: 0.0133rem;
-      border-bottom: 0.0133rem @line @color;
-      color:@color;
-      -webkit-transform-origin: 0 100%;
-      transform-origin: 0 100%;
-      -webkit-transform: scaleY(0.5);
-      transform: scaleY(0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px @line @color;
+    color:@color;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
     }
 
 }
@@ -71,21 +71,37 @@
     }
 
 }
-  .border-l(@color,@line){
+  .border-r(@color,@line){
     position: relative;
     &:after{
       content: " ";
       position: absolute;
-      left: 0;
+      right: 0;
       top: 0;
       width: 0.0133rem;
       bottom: 0;
       border-right: 0.0133rem @line @color;
-      color: @color;
-      -webkit-transform-origin: 0 0;
-      transform-origin: 0 0;
+      color:  @color;
+      -webkit-transform-origin: 100% 0;
+      transform-origin: 100% 0;
       -webkit-transform: scaleX(0.5);
       transform: scaleX(0.5);
     }
-
+}
+.border-all(@color,@line){
+  position: relative;
+  &:before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    border: 1px @line @color;
+    color: @color;
+    height: 200%;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5)
+  }
 }
