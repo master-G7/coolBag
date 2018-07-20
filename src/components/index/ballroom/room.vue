@@ -5,7 +5,6 @@
             <backtop></backtop>
         </div>
         <div class="title">
-            <i class="iconfont icon-fanhui fl"></i>
             球房
             <i class="iconfont icon-sousuo fr"></i>
         </div>
@@ -20,23 +19,26 @@
                 <i class="iconfont icon-xialajiantou"></i>
             </p>
         </div>
-        <div class="content">
-            <div class="left fl">
-                <img src="../../../../static/tiaosheng.gif" alt="">
+        <router-link to="/ballroominfo">
+            <div class="content">
+                <div class="left fl">
+                    <img src="../../../../static/tiaosheng.gif" alt="">
+                </div>
+                <div class="right">
+                    <div class="roomtitle fl">粤美特国际台球俱乐部
+                        <span class="price fr">￥120/时</span>
+                    </div>
+                    <div class="star fl">
+                        星星在这里
+                        <span>人气 998</span>
+                    </div>
+                    <div class="position fl">
+                        深圳市南山区粤美特桌球俱乐部(&lt;250m)
+                    </div>
+                </div>
             </div>
-            <div class="right">
-                <div class="roomtitle fl">粤美特国际台球俱乐部
-                    <span class="price fr">￥120/时</span>
-                </div>
-                <div class="star fl">
-                    星星在这里
-                    <span>人气 998</span>
-                </div>
-                <div class="position fl">
-                    深圳市南山区粤美特桌球俱乐部(&lt;250m)
-                </div>
-            </div>
-        </div>
+        </router-link>
+
         <div class="content">
             <div class="left fl">
                 <img src="../../../../static/gogogo.gif" alt="">
@@ -272,7 +274,7 @@
                 </div>
                 <div class="position fl">
                     深圳市南山区粤美特桌球俱乐部(&lt;250m)
-                </div>                          
+                </div>
             </div>
         </div>
         <div class="content">
@@ -311,7 +313,6 @@ export default {
 
 <style scoped lang="less">
 @import "../../../common/css/common.less";
-
 .ballroom {
   margin-bottom: 1.2rem;
   .addroom {

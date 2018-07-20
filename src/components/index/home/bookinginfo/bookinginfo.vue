@@ -2,7 +2,7 @@
   <div class="bookinginfo">
     <div class="title">
       <router-link to="/home">
-        <i class="iconfont icon-fanhui fl"></i>
+        <i class="iconfont icon-fanhui1 fl"></i>
       </router-link>
       预约信息
     </div>
@@ -13,7 +13,7 @@
             <img src="../../../../../static/tuomasi.gif" alt="">
           </div>
           <div class="right ">
-            <div class="roomtitle fl">超级无敌厉害的桌球小可爱
+            <div class="roomtitle fl">{{teacher}}
               <span class='fr'>助教</span>
             </div>
             <div class="star fl">星星在这里
@@ -21,7 +21,7 @@
             </div>
             <div class="priceinfo fl">
               <div class="pay fl">【台费支付】发起人付</div>
-              <div class="price fr">￥120/时</div>
+              <div class="price fr">￥{{price}}/时</div>
             </div>
           </div>
         </div>
@@ -103,7 +103,9 @@
             </div>
           </div>
         </div>
-        <div class="confirmButton">立即预约</div>
+        <router-link to='/infoConfirm'>
+          <div class="confirmButton" @click="confirmSubmit">立即预约</div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -116,6 +118,9 @@ export default {
     return {
       //留言
       message: "",
+      type: "中式",
+      price: 120,
+      teacher: "超级无敌小可爱",
       //游戏类型选择
       gtyperadio: "chn",
       gametypes: [
@@ -166,18 +171,22 @@ export default {
       bookingview: this.$dayjs().format("YYYY-MM-DD HH:mm"),
       bookingbegintime: new Date(this.$dayjs().format("YYYY/MM/DD HH:mm")),
       bookingendtime: new Date(this.$dayjs().add(14, "day")),
+      picktime: "",
       //持续时长
       duritionTime: 1,
       duritionTimeView: 1,
       showdurition: false,
       duritionNum: [
         {
-          values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+          values: []
         }
       ]
     };
   },
   components: {},
+  created() {
+    this.countTime();
+  },
   methods: {
     //显示下拉
     showpicker() {
@@ -212,7 +221,9 @@ export default {
       });
       this.gtyperadio = this.gametypes[index].value;
       this.gametypes[index].isChecked = true;
+      this.type = this.gametypes[index].label;
       console.log(this.gtyperadio);
+      console.log(this.gametypes[index].label);
     },
     //球桌选择
     ontableChange(picker, values) {
@@ -226,12 +237,13 @@ export default {
     },
     booktime(value) {
       console.log(value);
+      this.picktime = value;
       const time = this.$dayjs(value).format("YYYY年MM月DD日 HH时mm分");
       console.log(time);
       this.bookingview = time;
 
       Toast({
-        message: "预约时间为:" + time,
+        message: `预约时间为：${time}` ,
         position: "middle",
         duration: 1000
       });
@@ -249,6 +261,47 @@ export default {
     },
     duritionCancel() {
       this.showdurition = false;
+    },
+    //确认提交
+    confirmSubmit() {
+      this.$store.state.bookinginfo.message = this.message;
+      let nowtime = this.$dayjs(this.picktime)
+        .add(this.duritionTimeView, "hour")
+        .format("HH:mm");
+      let oldtest = this.bookingview;
+      let viewtime = `${oldtest} - ${nowtime}`;
+      this.$store.state.bookinginfo.time = viewtime;
+      this.$store.state.bookinginfo.table = this.tablenumvalue;
+      this.$store.state.bookinginfo.type = this.type;
+      this.$store.state.bookinginfo.roomname = this.roomview;
+      this.$store.state.bookinginfo.price = this.price;
+      this.$store.state.bookinginfo.totalPrice = this.price * this.duritionTimeView;
+      this.$store.state.bookinginfo.teacher = this.teacher;
+      console.log(this.message);
+      console.log(this.$store.state.bookinginfo.message);
+      console.log(this.$store.state.bookinginfo);
+    },
+    //计算时间联动
+    countTime() {
+      let nowTime = this.$dayjs().format("HH");
+      let subTime = 24 - nowTime;
+      let timearr = [];
+      for (let i = 1; i <= subTime; i++) {
+        timearr.push(i);
+      }
+      this.duritionNum[0].values = timearr;
+      this.picktime = this.$dayjs();
+    }
+  },
+  watch: {
+    bookingview: function() {
+      let hour = this.$dayjs(this.picktime).format("HH");
+      let subTime = 24 - hour;
+      let timearr = [];
+      for (let i = 1; i <= subTime; i++) {
+        timearr.push(i);
+      }
+      this.duritionNum[0].values = timearr;
     }
   }
 };

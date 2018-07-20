@@ -2,6 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'babel-polyfill'
 import Vue from 'vue'
+import Es6Promise from 'es6-promise'
+Es6Promise.polyfill()
 import App from './App'
 import VueRouter from 'vue-router'
 import fastclick from 'fastclick'
@@ -36,16 +38,8 @@ import mine from './components/index/mine/mine.vue'
 import home from './components/index/home/home.vue'
 import bottom from './components/index-bottom/index-bottom.vue'
 import bookinginfo from './components/index/home/bookinginfo/bookinginfo.vue'
-// import index from './components/index/index.vue'
-// const router = new VueRouter({
-//   routes:[
-//     {path: '/', redirect: '/home'},
-//     {path:'/ballroom',component:ballroom},
-//     {path:'/shequ',component:shequ},
-//     {path:'/mine',component:mine},
-//     {path:'/home',component:home},
-//   ]
-// })
+import infoConfirm from './components/index/home/bookinginfo/infoConfirm.vue'
+import ballroominfo from './components/index/ballroom/ballRoomInfo.vue'
 const router = new VueRouter({
   routes: [{
       path: '/',
@@ -80,14 +74,27 @@ const router = new VueRouter({
     {
       path: '/bookinginfo',
       component: bookinginfo,
-      
+      meta:{index:5}
+    },
+    {
+      path: '/infoConfirm',
+      component: infoConfirm,
+      meta:{index:6}
+    },
+    {
+      path: '/ballroominfo',
+      component: ballroominfo,
+      meta:{index:7}
     },
   ]
 })
+//vuex 
+import store from './store'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },

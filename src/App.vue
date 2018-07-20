@@ -19,13 +19,11 @@ export default {
   components: {},
   watch: {
     $route(to, from) {
-      if (to.path == sessionStorage.getItem("historypath")) {
-        this.transitionName = "slide-right";
-      } else {
+      if (to.meta.index > from.meta.index) {
         this.transitionName = "slide-left";
-        sessionStorage.setItem("historypath", from.path);
+      } else {
+        this.transitionName = "slide-right";
       }
-      console.log(sessionStorage.getItem("historypath") + "---" + to.path);
     }
   }
 };
