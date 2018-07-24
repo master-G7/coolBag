@@ -2,6 +2,13 @@
   <div class="ballroominfo">
     <!-- 轮播图 -->
     <div class="slide">
+      <div class="fixed">
+        <router-link to="ballroom">
+          <i class="iconfont icon-fanhui1 fl"></i>
+        </router-link>
+        <i class="iconfont icon-zhuanfa fr" @click='repeat'></i>
+        
+      </div>
       <mt-swipe :auto="2000" :speed='500'>
         <mt-swipe-item v-for="item in slides" :key="item.id">
           <a :href="item.href" rel="external nofollow">
@@ -29,13 +36,13 @@
       <div class="left">
         <span class="location">
           <i class="iconfont icon-dingwei"></i>
-          <span class="add">地址：</span>
+          <!-- <span class="add">地址：</span> -->
         </span>
         <span class="add">陈晓满爱吃酱香饼,鳕鱼排,肉包,菜包,豆沙包,榴莲鸡,陈晓满爱吃酱香饼,鳕鱼排,肉包,菜包,豆沙包,榴莲鸡,陈晓满爱吃酱香饼,鳕鱼排,肉包,菜包,豆沙包,榴莲鸡,</span>
       </div>
       <div class="phone">
         <div class="border">
-          <i class="iconfont icon-dianhua"></i>
+          <a href="tel:15918798195"><i class="iconfont icon-dianhua"></i></a>
         </div>
       </div>
     </div>
@@ -165,7 +172,7 @@
       <div class="levelMessage">
         <i class="iconfont icon-xiaoxi"></i>
       </div>
-      <div class="booking">立即预约</div>
+      <router-link to="/immediatelyBooking"><div class="booking">立即预约</div></router-link>
     </div>
     <!-- 分享弹出层 -->
     <mt-popup v-model="share" position="bottom" lockScroll='true'>
@@ -175,24 +182,24 @@
         </div>
         <div class="centerIcon">
           <div class="share">
-            <div class="img"></div>
+            <div class="imgWechat"></div>
             <div class="text">微信</div>
           </div>
           <div class="share">
-            <div class="img"></div>
+            <div class="imgFriend"></div>
             <div class="text">朋友圈</div>
           </div>
           <div class="share">
-            <div class="img"></div>
+            <div class="imgWeibo"></div>
             <div class="text">微薄</div>
           </div>
           <div class="share">
-            <div class="img"></div>
+            <div class="imgQ"></div>
             <div class="text">QQ</div>
           </div>
         </div>
         <div class="shareBottom">
-          <i class="iconfont icon-yishoucang"></i>
+          <i class="iconfont icon-quxiaoshibai" @click="cancelShare"></i>
         </div>
       </div>
     </mt-popup>
@@ -220,7 +227,7 @@ export default {
       ],
       shoucan: true,
       isselect: true,
-      share: false
+      share: false,
     };
   },
   components: {},
@@ -230,7 +237,9 @@ export default {
     },
     repeat() {
       this.share = true;
-      console.log(1);
+    },
+    cancelShare(){
+      this.share = false;
     }
   }
 };
@@ -277,6 +286,7 @@ export default {
           top: 50%;
           width: 40%;
           // border-top: 1px #dcdcdc solid;
+
         }
       }
     }
@@ -288,13 +298,32 @@ export default {
       flex-direction: row;
       justify-content:space-around;
       height: 3.0667rem;
-      .img{
+      .imgWechat{
         .bg-image('/static/icon-index/share/weixin');
         width: 1.6rem;
         height: 1.6rem;
             background-size: 100%;
       }
+      .imgFriend{
+        .bg-image('/static/icon-index/share/pengyouquan');
+        width: 1.6rem;
+        height: 1.6rem;
+            background-size: 100%;
+      }
+      .imgWeibo{
+        .bg-image('/static/icon-index/share/weibo');
+        width: 1.6rem;
+        height: 1.6rem;
+            background-size: 100%;
+      }
+      .imgQ{
+        .bg-image('/static/icon-index/share/qq');
+        width: 1.6rem;
+        height: 1.6rem;
+            background-size: 100%;
+      }
       .text{
+        margin-top: 0.2667rem;
         text-align: center;
       }
     }
@@ -309,12 +338,28 @@ export default {
         display: inline-block;
         width: 100%;
         line-height:1.28rem ;
+        font-size: 0.6933rem;
+        color: #ccc;
       }
     }
   }
   .slide {
     width: 100%;
     height: 6.4rem;
+    position: relative;
+    .fixed{
+      width: 100%;
+      padding: 0 0.32rem;
+      top: 0.3467rem;
+      position: absolute;
+      color: #fff;
+      z-index: 10;
+      i{
+      color: #fff;
+        font-size: 0.5333rem;
+      }
+
+    }
     img {
       width: 100%;
       height: 6.4rem;
@@ -368,7 +413,7 @@ export default {
       width: 8rem;
       font-size: 0.32rem;
       .location {
-        width: 1.4933rem;
+        width: 0.8rem;
         float: left;
         height: 100%;
         position: relative;
@@ -379,7 +424,9 @@ export default {
         }
         i {
           position: absolute;
-          top: 0.2133rem;
+          top: 0.2667rem; 
+          // left: 0.3734rem;
+          font-size: 0.5333rem;
         }
       }
       .add {

@@ -40,6 +40,7 @@ import bottom from './components/index-bottom/index-bottom.vue'
 import bookinginfo from './components/index/home/bookinginfo/bookinginfo.vue'
 import infoConfirm from './components/index/home/bookinginfo/infoConfirm.vue'
 import ballroominfo from './components/index/ballroom/ballRoomInfo.vue'
+import immediatelyBooking from './components/index/ballroom/immediatelyBooking.vue'
 const router = new VueRouter({
   routes: [{
       path: '/',
@@ -85,6 +86,11 @@ const router = new VueRouter({
       path: '/ballroominfo',
       component: ballroominfo,
       meta:{index:7}
+    },
+    {
+      path: '/immediatelyBooking',
+      component: immediatelyBooking,
+      meta:{index:8}
     },
   ]
 })
