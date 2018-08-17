@@ -8,7 +8,10 @@
           <i class="iconfont icon-xuandizhixiala"></i>
         </div>
         <i class="iconfont icon-sousuo"></i>
-        <input type="text" id="search_info">
+        <form action="">
+          <input type="search" id="search_info">
+        </form>
+        
       </div>
     </div>
     <!-- 轮播图 -->
@@ -100,10 +103,13 @@ export default {
 }
 .toptop {
   background-color: #fff;
-  height: 1.0667rem;
-  padding: 0.16rem 0.4rem 0.1333rem 0.4rem;
+  height: 1.2rem;
+  padding: 0.2134rem 0.4rem 0.16rem 0.4rem;
 }
 .search {
+  form{
+    display: inline;
+  }
   position: relative;
   height: 0.6667rem;
   i.icon-sousuo {

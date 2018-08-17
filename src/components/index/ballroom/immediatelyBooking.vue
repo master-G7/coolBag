@@ -15,12 +15,32 @@
         <i class="iconfont icon-dingwei"></i>
       </div>
     </div>
-    <div class="chooseDay">
-      <div class="chooseSwipe">
-        <div class="day" @click="getDate" v-for='item in dateArr' :key="item.index" :class="{dateActive:index == num}">{{item.day}}</div>
+    <div class="chosebox">
+      <div class="chooseDay">
+        <div class="chooseSwipe">
+          <mt-navbar v-model="daySelected">
+            <mt-tab-item :id="item.index" v-for='item in dateArr' :key="item.index">
+              <div class="day">
+                {{item.day}}</div>
+            </mt-tab-item>
+          </mt-navbar>
+          <!-- <div class="day" @click="getDate" v-for='item in dateArr' :key="item.index">{{item.day}}</div> -->
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- tab-container -->
+    <mt-tab-container v-model="daySelected">
+      <mt-tab-container-item v-for='item in dateArr' :id="item.index" :key="item.index">
+        <div class="chooseType">
+          <div class="chn fl" @click="gametypeTab('chn')" :class="gameTyep=='chn'?'active':''">中式</div>
+          <div class="usa fl" @click="gametypeTab('sua')"  :class="gameTyep=='sua'?'active':''">美式</div>
+          <div class="snk fl" @click="gametypeTab('snk')"  :class="gameTyep=='snk'?'active':''">斯诺卡</div>
+        </div>
+
+      </mt-tab-container-item>
+    </mt-tab-container>
+  </div> 
 </template>
 
 <script >
@@ -28,7 +48,9 @@ export default {
   data() {
     return {
       dataArr: [],
-      tabNmu: 0
+      tabNmu: 0,
+      daySelected: 0,
+      gameTyep: 'chn',
     };
   },
   components: {},
@@ -167,9 +189,10 @@ export default {
         }
       }
       this.dateArr = dateArr;
-      console.log(this.dateArr);
     },
-    tabDate(index) {}
+    gametypeTab(type){
+      this.gameTyep=type
+    }
   }
 };
 </script>
@@ -194,12 +217,16 @@ export default {
     font-weight: bold;
     line-height: 1.1733rem;
   }
+  .active{
+    color: #26a2ff;
+  }
   .roomAdd {
     width: 100%;
     height: 1.9733rem;
     background-color: #fff;
     padding: 0.4rem 0 0.4rem 0.32rem;
     .border-t(#dcdcdc,solid);
+    .border-b(#dcdcdc,solid);
     .left {
       float: left;
       .border-r(#dcdcdc,solid);
@@ -230,30 +257,56 @@ export default {
       }
     }
   }
-  .chooseDay {
+  .chosebox {
     background-color: #fff;
-    height: 1.1733rem;
-    .border-t(#dcdcdc,solid);
-    padding: 0 0.32rem;
     width: 100%;
+    height: 1.1733rem;
+    position: relative;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
+  }
+  .chooseDay {
+    position: relative;
+    overflow: hidden;
+    height: 100%+18px;
     overflow-x: scroll;
     overflow-y: hidden;
+
     .chooseSwipe {
+      position: absolute;
+      left: 0;
       width: 200%;
       height: 100%;
+      height: 1.1733rem;
+      padding: 0 0.32rem;
     }
-    .dateActive {
-      color: #0dbbfb;
-      border-bottom: 0.0533rem solid #0dbbfb;
-    }
-    .day {
-      float: left;
-      line-height: 1.1733rem;
-      font-size: 0.32rem;
-      color: 666;
-      width: 2.6133rem;
+  }
+  .chooseType{
+    padding: 0 .3rem 0 1.92rem;
+    height: 0.9333rem;
+    background-color: #fff;
+    width: 100%;
+          line-height: 0.9333rem;
+    .border-b(#dcdcdc,solid);
+    .border-t(#dcdcdc,solid);
+    div{
+      margin-right: 1.84rem;
+      height: 0.9333rem;
+      text-align: center;
     }
   }
 }
 </style>
+<style lang="less">
+.immediatelyBooking {
+  .chosebox {
+    .chooseDay {
+      .mint-tab-item {
+        padding: 0.4rem 0 0.38rem 0;
+        margin-right: 0.9733rem;
+      }
+    }
+  }
+}
+</style>
+
