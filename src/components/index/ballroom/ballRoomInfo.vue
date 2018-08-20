@@ -52,6 +52,7 @@
         <span class='teacher fl'>人气助教</span>
         <span class='more fr'>查看更多&gt;</span>
       </div>
+      <div class="listbox">
       <div class="list">
         <div class="scrool">
           <div class="teacherList">
@@ -95,8 +96,9 @@
             <div class="price">250元/小时</div>
           </div>
         </div>
-
       </div>
+      </div>
+
       <!-- <div class="list">
         <div class="teacherList">
           <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
@@ -479,11 +481,19 @@ export default {
         margin-right: 0.32rem;
       }
     }
+    .listbox{
+      width: 100%;
+       height: 4.1333rem;
+           position: relative;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    }
     .list {
       -webkit-overflow-scrolling: touch;
       overflow-x: scroll;
       overflow-y: hidden;
-      height: 4.1333rem;
+      height: 100%+18px;
+      position: relative;
       width: 100%;
       padding-bottom: 0.2667rem;
       .scrool {

@@ -18,29 +18,35 @@
     <div class="chosebox">
       <div class="chooseDay">
         <div class="chooseSwipe">
-          <mt-navbar v-model="daySelected">
-            <mt-tab-item :id="item.index" v-for='item in dateArr' :key="item.index">
-              <div class="day">
-                {{item.day}}</div>
-            </mt-tab-item>
-          </mt-navbar>
-          <!-- <div class="day" @click="getDate" v-for='item in dateArr' :key="item.index">{{item.day}}</div> -->
+          <div class="day fl" @click="pickdate(item.date)" v-for='item in dateArr' :key="item.index" :class="item.date==datepick?'current':''">
+            {{item.day}}</div>
         </div>
       </div>
     </div>
-
-    <!-- tab-container -->
-    <mt-tab-container v-model="daySelected">
-      <mt-tab-container-item v-for='item in dateArr' :id="item.index" :key="item.index">
-        <div class="chooseType">
-          <div class="chn fl" @click="gametypeTab('chn')" :class="gameTyep=='chn'?'active':''">中式</div>
-          <div class="usa fl" @click="gametypeTab('sua')"  :class="gameTyep=='sua'?'active':''">美式</div>
-          <div class="snk fl" @click="gametypeTab('snk')"  :class="gameTyep=='snk'?'active':''">斯诺卡</div>
+    <!-- gametype-->
+    <div class="chooseType">
+      <div class="chn fl" @click="gametypeTab('chn')" :class="gameTyep=='chn'?'active':''">中式</div>
+      <div class="usa fl" @click="gametypeTab('sua')" :class="gameTyep=='sua'?'active':''">美式</div>
+      <div class="snk fl" @click="gametypeTab('snk')" :class="gameTyep=='snk'?'active':''">斯诺克</div>
+    </div>
+    <!--table plan  -->
+    <div class="bookingbox">
+      <div class="bookingtype ">
+        <div class="typebox fl">
+          <div class="appointment fl"></div>
+          <div class="booktext">可预订</div>
         </div>
-
-      </mt-tab-container-item>
-    </mt-tab-container>
-  </div> 
+        <div class="typebox fl">
+          <div class="reserved fl"></div>
+          <div class="booktext">已预订</div>
+        </div>
+        <div class="typebox fl">
+          <div class="mypick fl"></div>
+          <div class="booktext">可预订</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script >
@@ -50,7 +56,8 @@ export default {
       dataArr: [],
       tabNmu: 0,
       daySelected: 0,
-      gameTyep: 'chn',
+      gameTyep: "chn",
+      datepick: ""
     };
   },
   components: {},
@@ -68,6 +75,9 @@ export default {
           day: this.$dayjs()
             .add(index, "day")
             .format("MM-DD"),
+          date: this.$dayjs()
+            .add(index, "day")
+            .format("YYYY-MM-DD"),
           week: this.$dayjs()
             .add(index, "day")
             .day(),
@@ -189,9 +199,13 @@ export default {
         }
       }
       this.dateArr = dateArr;
+      this.datepick = this.dateArr[0].date;
     },
-    gametypeTab(type){
-      this.gameTyep=type
+    gametypeTab(type) {
+      this.gameTyep = type;
+    },
+    pickdate(date) {
+      this.datepick = date;
     }
   }
 };
@@ -217,7 +231,7 @@ export default {
     font-weight: bold;
     line-height: 1.1733rem;
   }
-  .active{
+  .active {
     color: #26a2ff;
   }
   .roomAdd {
@@ -273,37 +287,77 @@ export default {
     overflow-y: hidden;
 
     .chooseSwipe {
+      display: flex;
       position: absolute;
       left: 0;
+      justify-content: space-between;
       width: 200%;
       height: 100%;
       height: 1.1733rem;
       padding: 0 0.32rem;
+      .current {
+        border-bottom: 0.08rem solid #26a2ff;
+      }
+      .day {
+        margin-right: 0.9733rem;
+        line-height: 1.2rem;
+        height: 100%;
+      }
     }
   }
-  .chooseType{
-    padding: 0 .3rem 0 1.92rem;
+  .chooseType {
+    padding: 0 0.3rem 0 1.92rem;
     height: 0.9333rem;
     background-color: #fff;
     width: 100%;
-          line-height: 0.9333rem;
+    line-height: 0.9333rem;
     .border-b(#dcdcdc,solid);
     .border-t(#dcdcdc,solid);
-    div{
+    div {
       margin-right: 1.84rem;
       height: 0.9333rem;
       text-align: center;
     }
   }
-}
-</style>
-<style lang="less">
-.immediatelyBooking {
-  .chosebox {
-    .chooseDay {
-      .mint-tab-item {
-        padding: 0.4rem 0 0.38rem 0;
-        margin-right: 0.9733rem;
+  .bookingbox {
+    height: 100%;
+    width: 100%;
+    padding: 0.2133rem;
+    .bookingtype {
+      height: 0.8rem;
+      width: 100%;
+      padding-left: 2.1867rem;
+      padding-top: 0.2133rem;
+      .typebox {
+        width: 1.7333rem;
+        .appointment {
+          width: 0.4rem;
+          height: 0.4rem;
+          &:before {
+            border-radius: 34%;
+          }
+          .border-all(#0cbfff,solid);
+        }
+        .reserved {
+          background-color: #fff;
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 34%;
+          &:before {
+            border-radius: 34%;
+          }
+          .border-all(#d5d5d5,solid);
+        }
+        .mypick {
+          background-color: #0cbfff;
+          width: 0.4rem;
+          height: 0.4rem;
+          border-radius: 34%;
+        }
+        .booktext {
+          line-height: 0.4533rem;
+          margin-left: 0.5333rem;
+        }
       }
     }
   }
