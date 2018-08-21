@@ -42,9 +42,184 @@
         </div>
         <div class="typebox fl">
           <div class="mypick fl"></div>
-          <div class="booktext">可预订</div>
+          <div class="booktext">我选中</div>
         </div>
       </div>
+    </div>
+    <!-- pick table -->
+    <div class="pickplace clearfix">
+      <div class="left fl ">
+        <div class="texttime">开始时间</div>
+        <div class="time">10:00</div>
+        <div class="time">11:00</div>
+        <div class="time">12:00</div>
+        <div class="time">13:00</div>
+        <div class="time">14:00</div>
+        <div class="time">15:00</div>
+        <div class="time">16:00</div>
+        <div class="time">17:00</div>
+        <div class="time">18:00</div>
+        <div class="time">19:00</div>
+        <div class="time">20:00</div>
+        <div class="time">21:00</div>
+        <div class="time">22:00</div>
+      </div>
+      <div class="right fl">
+        <div class="picktable">
+          <div class="placehold fl"></div>
+          <div class="tableswipe ">
+            <div class="tablenum ">
+              <div class="num fl">1号桌</div>
+              <div class="num fl">2号桌</div>
+              <div class="num fl">3号桌</div>
+              <div class="num fl">4号桌</div>
+              <div class="num fl">5号桌</div>
+              <div class="num fl">6号桌</div>
+              <div class="num fl">7号桌</div>
+              <div class="num fl">8号桌</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+            <div class="pick fl">
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picking">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+              <div class="picked">￥50.00</div>
+              <div class="mypick">￥50.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pickedlab">
+      <div class="mypickbox">
+        <div class="time">10:00-11:00</div>
+        <div class="tabnum">01</div>
+      </div>
+    </div>
+    <div class="confirm">
+      90.00元 提交订单
     </div>
   </div>
 </template>
@@ -322,7 +497,6 @@ export default {
   .bookingbox {
     height: 100%;
     width: 100%;
-    padding: 0.2133rem;
     .bookingtype {
       height: 0.8rem;
       width: 100%;
@@ -360,6 +534,139 @@ export default {
         }
       }
     }
+  }
+  .pickplace {
+    position: relative;
+    width: 100%;
+    padding-left: 0.2667rem;
+    overflow: auto;
+    .left {
+      position: relative;
+      z-index: 20;
+      .time:last-child {
+        margin-bottom: 0;
+      }
+      padding-bottom: 0.48rem;
+      // min-height: 13.2267rem;
+      width: 1.12rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 0.16rem;
+      font-size: 0.32rem;
+      .texttime {
+        padding: 0.24rem 0.24rem 0.2933rem 0.2133rem;
+      }
+      .time {
+        text-align: center;
+        margin-bottom: 0.6667rem;
+        line-height: 0.32rem;
+      }
+    }
+    .right {
+      height: 100%;
+      .placehold {
+        width: 1.3334rem;
+        height: 100%;
+      }
+      width: 100%;
+      padding-top: 0.3201rem;
+      // margin-left: 0.2667rem;
+      position: absolute;
+      // left: 1.4133rem;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
+      .picktable {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+      }
+      .tableswipe {
+        width: 200%;
+        height: 100%;
+        .tablenum {
+          .num {
+            margin-right: 0.2667rem;
+            width: 1.7333rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            color: #b5b5b5;
+            text-align: center;
+          }
+        }
+        .pick {
+          div {
+            float: left;
+            width: 1.7333rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            text-align: center;
+            margin-top: 0.1067rem;
+            margin-bottom: 0.1rem;
+            margin-right: 0.2667rem;
+            border-radius: 0.1066rem;
+            &:before {
+              border-radius: 8.0025px;
+            }
+            background-color: #fff;
+          }
+          .picking {
+            color: #0cbfff;
+            .border-all(#0cbfff,solid);
+          }
+          .picked {
+            color: #666;
+            .border-all(#ccc,solid);
+          }
+          .mypick {
+            background-color: #0cbfff;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .pickedlab {
+    margin-top: 0.9333rem;
+    padding-left: 0.32rem;
+
+    width: 100%;
+    .mypickbox {
+      width: 2.2rem;
+      height: 1.32rem;
+      .time {
+        border-top-left-radius: 0.1067rem;
+        border-top-right-radius: 0.1067rem;
+        width: 101%;
+        height: 49%;
+        text-align: center;
+        color: #fff;
+        background-color: #0abffd;
+        line-height: 0.6667rem;
+      }
+      .tabnum {
+        text-align: center;
+        height: 49%;
+        line-height: 0.6667rem;
+        background-color: #fff;
+        color: #0cbfff;
+      }
+      &:before {
+        border-radius: 8px;
+      }
+      .border-all(#0abffd,solid);
+    }
+  }
+  .confirm {
+    font-size: 0.3467rem;
+    width: 100%;
+    background-color: #0bc0fe;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4667rem;
+    height: 1.4667rem;
+    margin: 0.5067rem 0;
   }
 }
 </style>
