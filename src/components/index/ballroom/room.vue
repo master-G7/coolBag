@@ -29,7 +29,7 @@
                         <span class="price fr">￥120/时</span>
                     </div>
                     <div class="star fl">
-                        星星在这里
+                        <div class="fl instar"><star :size='24' :score='3.9'></star></div>
                         <span>人气 998</span>
                     </div>
                     <div class="position fl">
@@ -48,7 +48,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='4.9'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -65,7 +65,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='2.9'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -82,7 +82,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='0.9'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -99,7 +99,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='0'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -116,7 +116,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='1.9'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -133,7 +133,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='2.2'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -150,7 +150,7 @@
                     <span class="price fr">￥120/时</span>
                 </div>
                 <div class="star fl">
-                    星星在这里
+                    <div class="fl instar"><star :size='24' :score='2.9'></star></div>
                     <span>人气 998</span>
                 </div>
                 <div class="position fl">
@@ -300,13 +300,15 @@
 <script >
 import backtop from "../../../components/backto-top/backToTop.vue";
 import bottom from "../../../components/index-bottom/index-bottom";
+import star from '../../../components/star/star';
 export default {
   data() {
     return {};
   },
   components: {
     backtop,
-    bottom
+    bottom,
+    star,
   }
 };
 </script>
@@ -387,6 +389,9 @@ export default {
         width: 100%;
         height: 100%;
         color: #999;
+        .instar{
+            margin-right: 0.2666rem;
+        }
       }
       .position {
         font-size: 0.3733rem;

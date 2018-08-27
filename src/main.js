@@ -3,7 +3,6 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 import Es6Promise from 'es6-promise'
-Es6Promise.polyfill()
 import App from './App'
 import router  from './router/index.js'
 import fastclick from 'fastclick'
@@ -18,6 +17,7 @@ Vue.prototype.$dayjs = dayjs
 import axios from 'axios'
 Vue.prototype.$axios = axios
 axios.defaults.withCredentials = true
+Es6Promise.polyfill()
 
 // 引入vue-amap
 import AMap from 'vue-amap';

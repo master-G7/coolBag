@@ -24,7 +24,8 @@
                         <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                             <span class='fr'>助教</span>
                         </div>
-                        <div class="star fl">星星在这里
+                        <div class="star fl">
+                            <div class="fl instar"><star :size='24' :score='3.9'></star></div>
                             <span>229m|1天前</span>
                         </div>
                         <div class="priceinfo fl">
@@ -55,7 +56,7 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl">星星在这里
+                    <div class="star fl"><div class="fl instar"><star :size='24' :score='4.9'></star></div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -85,7 +86,7 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl">星星在这里
+                    <div class="star fl"><div class="fl instar"><star :size='24' :score='2.9'></star></div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -110,7 +111,7 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl">星星在这里
+                    <div class="star fl"><div class="fl instar"><star :size='24' :score='1.9'></star></div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -135,7 +136,7 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl">星星在这里
+                    <div class="star fl"><div class="fl instar"><star :size='24' :score='5'></star></div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -230,11 +231,14 @@
 </template>
 
 <script >
+import star from '../star/star'
 export default {
   data() {
     return {};
   },
-  components: {}
+  components: {
+      star
+  }
 };
 </script>
 
@@ -322,6 +326,9 @@ export default {
         width: 100%;
         height: 100%;
         color: #999;
+        .instar{
+            margin-right: 0.1333rem;
+        }
         span {
           font-size: 0.2667rem;
           margin-left: 0.1333rem;

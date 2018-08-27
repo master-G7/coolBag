@@ -7,7 +7,7 @@
           <i class="iconfont icon-fanhui1 fl"></i>
         </router-link>
         <i class="iconfont icon-zhuanfa fr" @click='repeat'></i>
-        
+
       </div>
       <mt-swipe :auto="2000" :speed='500'>
         <mt-swipe-item v-for="item in slides" :key="item.id">
@@ -42,7 +42,9 @@
       </div>
       <div class="phone">
         <div class="border">
-          <a href="tel:15918798195"><i class="iconfont icon-dianhua"></i></a>
+          <a href="tel:15918798195">
+            <i class="iconfont icon-dianhua"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -53,50 +55,50 @@
         <span class='more fr'>查看更多&gt;</span>
       </div>
       <div class="listbox">
-      <div class="list">
-        <div class="scrool">
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
-          </div>
-          <div class="teacherList">
-            <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
-            <div class="name">陈晓满</div>
-            <div class="price">250元/小时</div>
+        <div class="list">
+          <div class="scrool">
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
+            <div class="teacherList">
+              <div class="img"><img src="../../../../static/konglong.png" alt=""></div>
+              <div class="name">陈晓满</div>
+              <div class="price">250元/小时</div>
+            </div>
           </div>
         </div>
-      </div>
       </div>
 
       <!-- <div class="list">
@@ -142,7 +144,7 @@
       </div>
     </div>
     <!-- 详情展示 -->
-    <div class="detail">
+    <div class="detail" v-show='isselect'>
       <div class="time">
         <div class="dtitle">营业时间</div>
         <div class="dshow">营业时长：24小时</div>
@@ -166,6 +168,52 @@
         <div class="dshowInt">测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,测试文字100行,</div>
       </div>
     </div>
+    <!-- 评价 -->
+    <div class="peoplecomment" v-show='!isselect'>
+      <div class="commenttitle">全部评价</div>
+      <div class="comment-box ">
+        <div class="userinfo clearfix">
+          <img src="../../../assets/daima2.gif" alt="" class="user fl">
+          <div class="right ">
+            <div class="username fl">打台球使我快乐</div>
+            <div class="star fl">
+              <div class="fl instar">
+                <star :size='24' :score='4.9'></star>
+              </div>
+              <span class='time'>2018-08-22</span>
+            </div>
+          </div>
+          <div class="comment-body">
+            第一次网上预约打台球,具体详细的配置那些东西也不太懂,环境的话是我个人比较喜欢的,服务周到,然后球杆也是非常非常的好用
+          </div>
+          <div class="comment-bottom">
+            到店日期：2018-08-21
+            <span class="table">球桌：中九-002</span>
+          </div>
+        </div>
+      </div>
+      <div class="comment-box ">
+        <div class="userinfo clearfix">
+          <img src="../../../assets/daima2.gif" alt="" class="user fl">
+          <div class="right ">
+            <div class="username fl">打台球使我快乐</div>
+            <div class="star fl">
+              <div class="fl instar">
+                <star :size='24' :score='1.9'></star>
+              </div>
+              <span class='time'>2018-08-22</span>
+            </div>
+          </div>
+          <div class="comment-body">
+            第一次网上预约打台球,具体详细的配置那些东西也不太懂,环境的话是我个人比较喜欢的,服务周到,然后球杆也是非常非常的好用
+          </div>
+          <div class="comment-bottom">
+            到店日期：2018-08-21
+            <span class="table">球桌：中九-002</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 底部 -->
     <div class="bottom fl">
       <div class="repeat" @click='repeat'>
@@ -174,7 +222,9 @@
       <div class="levelMessage">
         <i class="iconfont icon-xiaoxi"></i>
       </div>
-      <router-link to="/immediatelyBooking"><div class="booking">立即预约</div></router-link>
+      <router-link to="/immediatelyBooking">
+        <div class="booking">立即预约</div>
+      </router-link>
     </div>
     <!-- 分享弹出层 -->
     <mt-popup v-model="share" position="bottom" lockScroll='true'>
@@ -210,6 +260,7 @@
 </template>
 
 <script >
+import star from "../../star/star";
 export default {
   data() {
     return {
@@ -229,10 +280,12 @@ export default {
       ],
       shoucan: true,
       isselect: true,
-      share: false,
+      share: false
     };
   },
-  components: {},
+  components: {
+    star
+  },
   methods: {
     clickshoucan() {
       this.shoucan = !this.shoucan;
@@ -240,7 +293,7 @@ export default {
     repeat() {
       this.share = true;
     },
-    cancelShare(){
+    cancelShare() {
       this.share = false;
     }
   }
@@ -273,12 +326,12 @@ export default {
         color: #333;
         font-size: 0.4rem;
         font-weight: bold;
-        &:after{
+        &:after {
           left: 0;
         }
-         &:before{
-           right: 0
-         }
+        &:before {
+          right: 0;
+        }
         &:after,
         &:before {
           background: #dcdcdc;
@@ -288,58 +341,57 @@ export default {
           top: 50%;
           width: 40%;
           // border-top: 1px #dcdcdc solid;
-
         }
       }
     }
-    .centerIcon{
+    .centerIcon {
       display: flex;
       position: absolute;
       top: 1.8rem;
       width: 100%;
       flex-direction: row;
-      justify-content:space-around;
+      justify-content: space-around;
       height: 3.0667rem;
-      .imgWechat{
-        .bg-image('/static/icon-index/share/weixin');
+      .imgWechat {
+        .bg-image("/static/icon-index/share/weixin");
         width: 1.6rem;
         height: 1.6rem;
-            background-size: 100%;
+        background-size: 100%;
       }
-      .imgFriend{
-        .bg-image('/static/icon-index/share/pengyouquan');
+      .imgFriend {
+        .bg-image("/static/icon-index/share/pengyouquan");
         width: 1.6rem;
         height: 1.6rem;
-            background-size: 100%;
+        background-size: 100%;
       }
-      .imgWeibo{
-        .bg-image('/static/icon-index/share/weibo');
+      .imgWeibo {
+        .bg-image("/static/icon-index/share/weibo");
         width: 1.6rem;
         height: 1.6rem;
-            background-size: 100%;
+        background-size: 100%;
       }
-      .imgQ{
-        .bg-image('/static/icon-index/share/qq');
+      .imgQ {
+        .bg-image("/static/icon-index/share/qq");
         width: 1.6rem;
         height: 1.6rem;
-            background-size: 100%;
+        background-size: 100%;
       }
-      .text{
+      .text {
         margin-top: 0.2667rem;
         text-align: center;
       }
     }
-    .shareBottom{
+    .shareBottom {
       position: absolute;
       height: 1.2667rem;
       top: 4.9333rem;
       .border-t(#dcdcdc,solid);
       width: 100%;
-      i{
-        margin-left:4.6667rem;
+      i {
+        margin-left: 4.6667rem;
         display: inline-block;
         width: 100%;
-        line-height:1.28rem ;
+        line-height: 1.28rem;
         font-size: 0.6933rem;
         color: #ccc;
       }
@@ -349,18 +401,17 @@ export default {
     width: 100%;
     height: 6.4rem;
     position: relative;
-    .fixed{
+    .fixed {
       width: 100%;
       padding: 0 0.32rem;
       top: 0.3467rem;
       position: absolute;
       color: #fff;
       z-index: 10;
-      i{
-      color: #fff;
+      i {
+        color: #fff;
         font-size: 0.5333rem;
       }
-
     }
     img {
       width: 100%;
@@ -426,7 +477,7 @@ export default {
         }
         i {
           position: absolute;
-          top: 0.2667rem; 
+          top: 0.2667rem;
           // left: 0.3734rem;
           font-size: 0.5333rem;
         }
@@ -481,12 +532,12 @@ export default {
         margin-right: 0.32rem;
       }
     }
-    .listbox{
+    .listbox {
       width: 100%;
-       height: 4.1333rem;
-           position: relative;
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+      height: 4.1333rem;
+      position: relative;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
     }
     .list {
       -webkit-overflow-scrolling: touch;
@@ -597,6 +648,61 @@ export default {
       -webkit-box-orient: vertical;
     }
   }
+  .peoplecomment {
+    .commenttitle {
+      padding: 0.3467rem 0.32rem;
+      height: 1.0667rem;
+      width: 100%;
+      font-size: 0.4rem;
+    }
+    padding: 0 0.32rem;
+    .comment-box {
+      .userinfo {
+        width: 100%;
+        padding-top: 0.5333rem;
+        img {
+          width: 0.9333rem;
+          height: 0.9333rem;
+          border-radius: 50%;
+        }
+        .right {
+          margin-left: 1.0933rem;
+          height: 0.9333rem;
+          .username {
+            width: 85%;
+          }
+          .star {
+            width: 100%;
+            color: #999;
+            .time {
+              margin-left: 0.1333rem;
+            }
+          }
+        }
+        .comment-body {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          margin-top: 0.3467rem;
+          font-size: 0.3733rem;
+        }
+        .comment-bottom {
+          margin-top: 0.32rem;
+          margin-bottom: 0.2667rem;
+          color: #999;
+          font-size: 0.32rem;
+          .table {
+            margin-left: 0.4533rem;
+          }
+        }
+      }
+      .border-t(#dcdcdc,solid);
+    }
+    .border-t(#dcdcdc,solid);
+  }
+
   .bottom {
     div {
       float: left;
