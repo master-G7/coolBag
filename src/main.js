@@ -5,6 +5,7 @@ import Vue from 'vue'
 import Es6Promise from 'es6-promise'
 import App from './App'
 import router  from './router/index.js'
+import 'iview/dist/styles/iview.css';
 import fastclick from 'fastclick'
 import 'lib-flexible/flexible.js' 
 import '@/common/css/reset.css'

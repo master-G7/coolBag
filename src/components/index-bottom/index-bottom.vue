@@ -104,7 +104,10 @@ export default {
 #index-bottom {
   .mint-tabbar > .mint-tab-item.is-selected {
     background-color: rgba(0, 0, 0, 0);
-    color: #26a2ff;
+    .mint-tab-item-label{
+
+      color: #26a2ff 
+    }
   }
   .mint-tab-item-icon {
     width: 0.5067rem;
@@ -113,6 +116,7 @@ export default {
   .mint-tab-item-label {
     font-size: 0.2667rem;
     margin-top: 0.1333rem;
+    color: #ccc;
     -webkit-user-select: none;
 
     -moz-user-select: none;

@@ -10,6 +10,7 @@ import bookinginfo from '../components/index/home/bookinginfo/bookinginfo.vue'
 import infoConfirm from '../components/index/home/bookinginfo/infoConfirm.vue'
 import ballroominfo from '../components/index/ballroom/ballRoomInfo.vue'
 import immediatelyBooking from '../components/index/ballroom/immediatelyBooking.vue'
+import comment from '../components/index/mine/comment.vue'
 
 Vue.use(Router)
 
@@ -63,6 +64,11 @@ export default new Router({
       path: '/immediatelyBooking',
       component: immediatelyBooking,
       meta:{index:8}
+    },
+    {
+      path: '/comment',
+      component: comment,
+      meta:{index:9}
     },
   ]
 })
