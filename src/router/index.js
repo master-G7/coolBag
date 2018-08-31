@@ -11,6 +11,7 @@ import infoConfirm from '../components/index/home/bookinginfo/infoConfirm.vue'
 import ballroominfo from '../components/index/ballroom/ballRoomInfo.vue'
 import immediatelyBooking from '../components/index/ballroom/immediatelyBooking.vue'
 import comment from '../components/index/mine/comment.vue'
+import pay from '../components/index/mine/pay-list.vue'
 
 Vue.use(Router)
 
@@ -69,6 +70,11 @@ export default new Router({
       path: '/comment',
       component: comment,
       meta:{index:9}
+    },
+    {
+      path: '/pay',
+      component: pay,
+      meta:{index:10}
     },
   ]
 })

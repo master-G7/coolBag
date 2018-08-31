@@ -58,6 +58,8 @@ export default {
       // element.scrollIntoView({ block: "end", behavior: "smooth" });
     },
     cfmcomment() {
+      console.log(this.des);
+      
       Toast({
         message: "成功提交评价",
         iconClass: "iconfont icon-chenggong",
@@ -69,7 +71,7 @@ export default {
   components: { Rate },
   watch: {
     msg() {
-      this.msgNum -= this.msg.length;
+      this.msgNum =500- this.msg.length;
     }
   }
 };

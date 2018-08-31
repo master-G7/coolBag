@@ -15,35 +15,15 @@
       <div class="fl" :class="biilType=='comment'?'active':''" @click="biilType='comment'">待评价</div>
     </div>
     <div class="pay-list">
-      <div class="wait-pay bgc">
-        <div class="head h90">订单编号 1149512312
-          <div class="type fr">待付款</div>
-        </div>
-        <div class="roomName h90">
-          <span class="type-room border-type">球房</span>粤美特国际台球俱乐部</div>
-        <div class="list-content h210">
-          <div class="tableNum fl">中式1号桌
-            <div class="list-price fr ">100.00元</div>
-          </div>
-          <div class="list-state fl">[未预约助教]</div>
-          <div class="list-time fl">2018-07-13 15:00-16:00</div>
-        </div>
-        <div class="bottom-time h90 ">
-          <div class='fr'>共3个时段, 实付款：￥150.00</div>
-        </div>
-        <div class="bootom h90">
-          <div class="button-b fr">立即支付</div>
-          <router-link to="comment">
-            <div class="button-w fr">查看详情</div>
-          </router-link>
-        </div>
-        
-      </div>
+      <detail gameType = 'room' payType='wait' ></detail>
+      <detail gameType = 'fight' payType='paying' ></detail>
+      <detail gameType = 'teach' payType='comment' ></detail>
     </div>
   </div>
 </template>
 
 <script >
+import detail from './list-detail'
 export default {
   data() {
     return {
@@ -51,7 +31,7 @@ export default {
       biilType: "all"
     };
   },
-  components: {},
+  components: {detail},
 };
 </script>
 
@@ -59,6 +39,7 @@ export default {
 @import "../../../common/css/common.less";
 .mine {
   width: 100%;
+  padding-bottom:1.2rem;
   .bgc {
     width: 100%;
     background-color: #fff;
@@ -106,89 +87,9 @@ export default {
     text-align: center;
     background-color: #fff;
     margin-top: 0.4rem;
-    margin-bottom: 0.2133rem;
     color: #666;
     .active {
       border-bottom: 0.08rem solid #0ccaff;
-    }
-  }
-  .pay-list {
-    width: 100%;
-    .h90 {
-      padding: 0 0.32rem;
-      height: 1.2rem;
-      line-height: 1.2rem;
-      .border-b(#dcdcdc,solid);
-    }
-    .h210 {
-      width: 100%;
-      padding: 0 0.32rem;
-      line-height: 2.8rem;
-      height: 2.8rem;
-      .border-b(#dcdcdc,solid);
-    }
-
-    .border-type {
-      display: inline-block;
-      width: 0.8rem;
-      height: 0.4rem;
-      border-radius: 0.1067rem;
-      text-align: center;
-      font-size: 0.2933rem;
-      line-height: 0.44rem;
-      margin-right: 0.1333rem;
-      &:before {
-        border-radius: 8px;
-      }
-    }
-    .type-room {
-      color: #fb5b44;
-      .border-all( #fb5b44,solid);
-    }
-    .list-content {
-      .tableNum {
-        width: 100%;
-        height: 1.3333rem;
-        line-height: 1.3333rem;
-      }
-    }
-    .list-state {
-      color: #666;
-      height: 0.4rem;
-      line-height: 0.4rem;
-      width: 100%;
-      font-size: 0.3733rem;
-    }
-    .list-time {
-      font-size: 0.2933rem;
-      line-height: 1.0667rem;
-      height: 1.0667rem;
-      color: #666;
-    }
-    .button-w {
-      width: 2rem;
-      margin-top: 0.2133rem;
-      height: 0.7467rem;
-      line-height: 0.7467rem;
-      text-align: center;
-      background-color: #fff;
-      color: #0ccaff;
-      margin-left: 0.2667rem;
-      &:before {
-        border-radius: 8px;
-      }
-      .border-all(#0ccaff,solid);
-    }
-    .button-b {
-      width: 2rem;
-      margin-top: 0.2133rem;
-      height: 0.7467rem;
-      line-height: 0.7467rem;
-      text-align: center;
-      background-color: #0ccaff;
-      color: #fff;
-      margin-left: 0.2667rem;
-      border-radius: 0.1067rem;
     }
   }
 }
