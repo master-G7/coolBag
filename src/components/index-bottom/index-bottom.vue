@@ -16,9 +16,9 @@
         <img v-show="path !== '/shequ'" slot="icon" src="../../../static/icon-index/tab-icon/community@3x.png"> 社区
         <img v-show="path == '/shequ'" slot="icon" src="../../../static/icon-index/tab-icon/community-blue@3x.png">
       </mt-tab-item>
-      <mt-tab-item id="/mine">
-        <img v-show="path !== '/mine'" slot="icon" src="../../../static/icon-index/tab-icon/mine@3x.png"> 我的
-        <img v-show="path == '/mine'" slot="icon" src="../../../static/icon-index/tab-icon/mine-blue@3x.png">
+      <mt-tab-item id="/userinfo">
+        <img v-show="path !== '/userinfo'" slot="icon" src="../../../static/icon-index/tab-icon/mine@3x.png"> 我的
+        <img v-show="path == '/userinfo'" slot="icon" src="../../../static/icon-index/tab-icon/mine-blue@3x.png">
       </mt-tab-item>
     </mt-tabbar>
   </div>
@@ -53,10 +53,10 @@ export default {
           this.path = sessionStorage.getItem("tabpath");
           this.$router.push("/shequ");
           break;
-        case "/mine":
-          sessionStorage.setItem("tabpath", "/mine");
+        case "/userinfo":
+          sessionStorage.setItem("tabpath", "/userinfo");
           this.path = sessionStorage.getItem("tabpath");
-          this.$router.push("/mine");
+          this.$router.push("/userinfo");
           break;
       }
     },

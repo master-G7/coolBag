@@ -578,7 +578,7 @@ export default {
       .picktable {
         position: relative;
         overflow: hidden;
-        height: 100%;
+        height: 100%+18px;
         overflow-x: scroll;
         overflow-y: hidden;
       }

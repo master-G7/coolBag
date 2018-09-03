@@ -15,8 +15,9 @@
         <div class="list-content h210" v-if="gameType == 'room'">
           <div class="tableNum fl">中式1号桌
             <div class="list-price fr ">100.00元</div>
+            
           </div>
-          <div class="list-state fl" v-if="isteache == false">[未预约助教]</div>
+          <div class="list-state fl" v-if="isteache == false">[未预约助教]<div class="iscancel button-w fr">申请退订</div></div>
           <div class="list-state fl" v-else>助教:丁俊晖</div>
           <div class="list-time fl">2018-07-13 15:00-16:00</div>
         </div>
@@ -63,7 +64,8 @@ export default {
   props: {
     gameType: String,
     payType: String,
-    isteache: Boolean
+    isteache: Boolean,
+    iscancel:false,
   },
   data() {
     return {};
@@ -98,7 +100,10 @@ export default {
     height: 2.8rem;
     .border-b(#dcdcdc,solid);
   }
-
+  .iscancel{
+    margin: 0!important;
+    font-size: 0.3467rem;
+  }
   .border-type {
     display: inline-block;
     width: 0.8rem;
@@ -129,6 +134,7 @@ export default {
       width: 100%;
       height: 1.3333rem;
       line-height: 1.3333rem;
+      font-size: 0.4533rem;
     }
   }
   .list-state {

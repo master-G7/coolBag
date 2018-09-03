@@ -12,6 +12,7 @@ import ballroominfo from '../components/index/ballroom/ballRoomInfo.vue'
 import immediatelyBooking from '../components/index/ballroom/immediatelyBooking.vue'
 import comment from '../components/index/mine/comment.vue'
 import pay from '../components/index/mine/pay-list.vue'
+import userinfo from '../components/index/mine/userinfo.vue'
 
 Vue.use(Router)
 
@@ -35,8 +36,8 @@ export default new Router({
           meta:{index:3}
         },
         {
-          path: '/mine',
-          component: mine,
+          path: '/userinfo',
+          component: userinfo,
           meta:{index:4}
         },
         {
