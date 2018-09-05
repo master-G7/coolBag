@@ -1,13 +1,13 @@
 <template>
   <div class="comment">
     <div class="title">
-      <router-link to="mine">
+      <router-link to="userinfo">
         <i class="iconfont icon-fanhui1 fl"></i>
       </router-link>
       评价晒单
     </div>
     <div class="room-title p24">
-      <img src="../../../assets/daima.jpg" alt=""> 粤美特国际俱乐部
+      <img src="../../../../assets/daima.jpg" alt=""> 粤美特国际俱乐部
     </div>
     <div class="p24">
       <div class="comment-box">
@@ -58,8 +58,6 @@ export default {
       // element.scrollIntoView({ block: "end", behavior: "smooth" });
     },
     cfmcomment() {
-      console.log(this.des);
-      
       Toast({
         message: "成功提交评价",
         iconClass: "iconfont icon-chenggong",

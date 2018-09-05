@@ -123,7 +123,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "../../../common/css/common.less";
+@import "../../../../common/css/common.less";
 .pay-list {
   width: 100%;
   .f30 {

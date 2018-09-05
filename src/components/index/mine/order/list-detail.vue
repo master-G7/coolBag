@@ -17,7 +17,7 @@
             <div class="list-price fr ">100.00元</div>
             
           </div>
-          <div class="list-state fl" v-if="isteache == false">[未预约助教]<div class="iscancel button-w fr">申请退订</div></div>
+          <div class="list-state fl" v-if="isteache == false">[未预约助教]<router-link to="cancelOrder"><div class="iscancel button-w fr">申请退订</div></router-link></div>
           <div class="list-state fl" v-else>助教:丁俊晖</div>
           <div class="list-time fl">2018-07-13 15:00-16:00</div>
         </div>
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "../../../common/css/common.less";
+@import "../../../../common/css/common.less";
 .bgc {
   width: 100%;
   background-color: #fff;

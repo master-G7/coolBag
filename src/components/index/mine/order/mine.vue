@@ -1,6 +1,9 @@
 <template>
   <div class="mine">
     <div class="title">
+      <router-link to="userinfo">
+        <i class="iconfont icon-fanhui1 fl"></i>
+      </router-link>
       我的订单
     </div>
     <div class="type-tab clearfix">
@@ -15,15 +18,15 @@
       <div class="fl" :class="biilType=='comment'?'active':''" @click="biilType='comment'">待评价</div>
     </div>
     <div class="pay-list">
-      <detail gameType = 'room' payType='wait' ></detail>
-      <detail gameType = 'fight' payType='paying' ></detail>
-      <detail gameType = 'teach' payType='comment' ></detail>
+      <detail gameType='room' payType='wait'></detail>
+      <detail gameType='fight' payType='paying'></detail>
+      <detail gameType='teach' payType='comment'></detail>
     </div>
   </div>
 </template>
 
 <script >
-import detail from './list-detail'
+import detail from "./list-detail";
 export default {
   data() {
     return {
@@ -31,15 +34,15 @@ export default {
       biilType: "all"
     };
   },
-  components: {detail},
+  components: { detail }
 };
 </script>
 
 <style scoped lang="less">
-@import "../../../common/css/common.less";
+@import "../../../../common/css/common.less";
 .mine {
   width: 100%;
-  padding-bottom:1.2rem;
+  padding-bottom: 1.2rem;
   .bgc {
     width: 100%;
     background-color: #fff;

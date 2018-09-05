@@ -10,7 +10,7 @@ address,cite,code,em,th,i {font-weight:normal; font-style:normal;}
 a {
     text-decoration:none;
     out-line: none;
-    color:blakc;
+    color:#333;
     }
 .fl{
     float: left;
