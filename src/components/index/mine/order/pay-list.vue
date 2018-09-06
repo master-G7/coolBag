@@ -65,8 +65,10 @@
         </div>
       </div>
     </div>
-    <div class="bottom-btn" @click='pay'>
+    <div class="p24">
+    <div class="cfmbtn" @click='pay'>
       立即支付
+    </div>
     </div>
   </div>
 </template>

@@ -104,7 +104,8 @@
           </div>
         </div>
         <router-link to='/infoConfirm'>
-          <div class="confirmButton" @click="confirmSubmit">立即预约</div>
+            <div class="cfmbtn" @click="confirmSubmit">立即预约</div>
+
         </router-link>
       </div>
     </div>
@@ -243,7 +244,7 @@ export default {
       this.bookingview = time;
 
       Toast({
-        message: `预约时间为：${time}` ,
+        message: `预约时间为：${time}`,
         position: "middle",
         duration: 1000
       });
@@ -275,7 +276,8 @@ export default {
       this.$store.state.bookinginfo.type = this.type;
       this.$store.state.bookinginfo.roomname = this.roomview;
       this.$store.state.bookinginfo.price = this.price;
-      this.$store.state.bookinginfo.totalPrice = this.price * this.duritionTimeView;
+      this.$store.state.bookinginfo.totalPrice =
+        this.price * this.duritionTimeView;
       this.$store.state.bookinginfo.teacher = this.teacher;
       console.log(this.message);
       console.log(this.$store.state.bookinginfo.message);

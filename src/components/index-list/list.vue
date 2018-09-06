@@ -18,6 +18,9 @@
             <div class="content">
                 <div class="info">
                     <div class="left fl">
+                        <div class="text">高手</div>
+                        <div class="triangle">
+                        </div>
                         <img src="../../../static/tuomasi.gif" alt="">
                     </div>
                     <div class="right">
@@ -25,7 +28,9 @@
                             <span class='fr'>助教</span>
                         </div>
                         <div class="star fl">
-                            <div class="fl instar"><star :size='24' :score='3.9'></star></div>
+                            <div class="fl instar">
+                                <star :size='24' :score='3.9'></star>
+                            </div>
                             <span>229m|1天前</span>
                         </div>
                         <div class="priceinfo fl">
@@ -50,13 +55,18 @@
         <div class="content">
             <div class="info">
                 <div class="left fl">
+                    <div class="text">A+</div>
+                    <div class="triangle"></div>
                     <img src="../../../static/tuomasi.gif" alt="">
                 </div>
                 <div class="right">
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl"><div class="fl instar"><star :size='24' :score='4.9'></star></div>
+                    <div class="star fl">
+                        <div class="fl instar">
+                            <star :size='24' :score='4.9'></star>
+                        </div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -86,7 +96,10 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl"><div class="fl instar"><star :size='24' :score='2.9'></star></div>
+                    <div class="star fl">
+                        <div class="fl instar">
+                            <star :size='24' :score='2.9'></star>
+                        </div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -111,7 +124,10 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl"><div class="fl instar"><star :size='24' :score='1.9'></star></div>
+                    <div class="star fl">
+                        <div class="fl instar">
+                            <star :size='24' :score='1.9'></star>
+                        </div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -136,7 +152,10 @@
                     <div class="roomtitle fl">超级无敌厉害的桌球小可爱
                         <span class='fr'>助教</span>
                     </div>
-                    <div class="star fl"><div class="fl instar"><star :size='24' :score='5'></star></div>
+                    <div class="star fl">
+                        <div class="fl instar">
+                            <star :size='24' :score='5'></star>
+                        </div>
                         <span>229m|1天前</span>
                     </div>
                     <div class="priceinfo fl">
@@ -231,13 +250,13 @@
 </template>
 
 <script >
-import star from '../star/star'
+import star from "../star/star";
 export default {
   data() {
     return {};
   },
   components: {
-      star
+    star
   }
 };
 </script>
@@ -269,10 +288,7 @@ export default {
   .content {
     padding: 0 0.3333rem;
     height: 4.1333rem;
-    // border-top: 0.0133rem solid #dcdcdc;/*no*/
-    .border-1pxTop(#dcdcdc,solid);
-  }
-  .position {
+      .position {
     padding: 0.2667rem 0 0.5333rem 0;
     color: black;
     i {
@@ -289,62 +305,88 @@ export default {
       font-size: 0.2667rem;
     }
   }
-  .info {
-    height: 2.4rem;
-    padding: 0.5333rem 0 0.2667rem 0;
-    // border-bottom: 0.0133rem dashed #dcdcdc;
-    .border-1pxTop(#dcdcdc,dashed);
-    .left {
-      width: 1.6rem;
-      height: 1.6rem;
-      img {
-        border-radius: 0.08rem;
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .right {
-      margin-left: 1.8667rem;
-      .roomtitle {
-        font-size: 0.4267rem;
-        font-weight: bold;
-        color: #333;
-        span {
-          border: 0.0133rem solid #ff9120;
-          width: 0.8rem;
-          height: 0.4rem;
-          text-align: center;
-          line-height: 0.4rem;
-          font-size: 0.2933rem;
-          font-weight: normal;
-          color: #ff9120;
-          margin-left: 0.16rem;
+    .info {
+      height: 2.4rem;
+      padding: 0.5333rem 0 0.2667rem 0;
+      // border-bottom: 0.0133rem dashed #dcdcdc;
+      .border-1pxTop(#dcdcdc,dashed);
+      .left {
+        width: 1.6rem;
+        height: 1.6rem;
+        position: relative;
+        .triangle {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-top-right-radius: 0.08rem;
+          border-style: solid;
+          border-width: 0 0.6667rem 0.5334rem 0;
+          border-color: transparent #fa5c41 transparent transparent;
+        }
+        .text {
+          position: absolute;
+          top: 0.04rem;
+          right: 0;
+          font-weight: bold;
+          color: #fff;
+          font-size: 0.2133rem;
+          z-index: 1;
+          -webkit-transform: rotate(38deg);
+          -moz-transform: rotate(38deg);
+        }
+        img {
           border-radius: 0.08rem;
+          width: 100%;
+          height: 100%;
         }
       }
-      .star {
-        width: 100%;
-        height: 100%;
-        color: #999;
-        .instar{
+      .right {
+        margin-left: 1.8667rem;
+        .roomtitle {
+          font-size: 0.4267rem;
+          font-weight: bold;
+          color: #333;
+          span {
+            border: 0.0133rem solid #ff9120;
+            width: 0.8rem;
+            height: 0.4rem;
+            text-align: center;
+            line-height: 0.4rem;
+            font-size: 0.2933rem;
+            font-weight: normal;
+            color: #ff9120;
+            margin-left: 0.16rem;
+            border-radius: 0.08rem;
+          }
+        }
+        .star {
+          width: 100%;
+          height: 100%;
+          color: #999;
+          .instar {
             margin-right: 0.1333rem;
+          }
+          span {
+            font-size: 0.2667rem;
+            margin-left: 0.1333rem;
+          }
         }
-        span {
-          font-size: 0.2667rem;
-          margin-left: 0.1333rem;
-        }
-      }
-      .priceinfo {
-        width: 100%;
-        color: #999;
-        font-size: 0.32rem;
-        text-indent: -0.1067rem;
-        .price {
-          color: #fd3d39;
-          font-size: 0.4533rem;
+        .priceinfo {
+          width: 100%;
+          color: #999;
+          font-size: 0.32rem;
+          text-indent: -0.1067rem;
+          .price {
+            color: #fd3d39;
+            font-size: 0.4533rem;
+          }
         }
       }
     }
+    .border-1pxTop(#dcdcdc,solid);
   }
+
 }
 </style>

@@ -15,6 +15,9 @@ import pay from '../components/index/mine/order/pay-list.vue'
 import cancelOrder from '../components/index/mine/order/cancelOrder.vue'
 import userinfo from '../components/index/mine/userinfo'
 import mybook from '../components/index/mine/mybook/mybook.vue'
+import bookinfo from '../components/index/mine/mybook/bookinfo.vue'
+import map from '../components/map/map.vue'
+import joinUs from '../components/index/home/bookinginfo/joinUs/joinUs.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -51,6 +54,11 @@ export default new Router({
     {
       path: '/bookinginfo',
       component: bookinginfo,
+      meta:{index:5}
+    },
+    {
+      path: '/joinUs',
+      component: joinUs,
       meta:{index:5}
     },
     {
@@ -92,6 +100,16 @@ export default new Router({
       path: '/mybook',
       component: mybook,
       meta:{index:10}
+    },
+    {
+      path: '/bookinfo',
+      component: bookinfo,
+      meta:{index:11}
+    },
+    {
+      path: '/gotobook',
+      component: map,
+      meta:{index:12}
     },
   ]
 })

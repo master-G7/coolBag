@@ -56,7 +56,7 @@ export default {
 @import '../../../src/common/css/common.less';
 .totop {
   position: fixed;
-  bottom: 2rem;
+  bottom:3.6533rem;;
   right: 0.6667rem;
   .bg-image("/static/float/totop");
   width: 1.8133rem;

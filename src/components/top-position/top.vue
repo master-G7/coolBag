@@ -39,8 +39,10 @@
         <i>找球房</i>
       </div>
       <div class="join">
+        <router-link to="joinUs">
         <span></span>
         <i>球房加盟</i>
+        </router-link>
       </div>
     </div>
     <div class="map">

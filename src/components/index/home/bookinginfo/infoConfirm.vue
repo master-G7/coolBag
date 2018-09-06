@@ -38,7 +38,7 @@
                     <span class="color">{{totalprice}}</span> 元
                 </div>
             </div>
-            <div class="confirmButton" @click='confirmTeach'>立即预约</div>
+            <div class="cfmbtn" @click='confirmTeach'>立即预约</div>
 
         </div>
     </div>

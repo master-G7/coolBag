@@ -38,7 +38,20 @@ box-sizing:border-box;
     box-sizing: border-box;
 }
 .p24{
+    width: 100%;
     padding: 0 0.32rem;
+}
+.cfmbtn{
+    margin-top: 0.2667rem;
+    width: 100%;
+    height: 1.1733rem;
+    color: #fff;
+    background-color: #0bc0fe;
+    line-height: 1.1733rem;
+    border-radius: 0.1067rem;
+    font-size: 0.4rem;
+    text-align: center;
+    
 }
 
 

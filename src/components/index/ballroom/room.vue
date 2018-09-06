@@ -402,11 +402,5 @@ export default {
   }
 }
 </style>
-<style lang="less">
-.ballroomBacktotop {
-  .backtotop .totop {
-    bottom: 3.6533rem;
-  }
-}
-</style>
+
 
