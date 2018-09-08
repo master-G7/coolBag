@@ -1,90 +1,91 @@
 <template>
-    <div class="joinUs">
-        <div class="title">
-            <router-link to="home">
-                <i class="iconfont icon-fanhui1 fl"></i>
-            </router-link>
-            球房加盟
-        </div>
-        <div class="content">
-            <div class="h90">
-                <div class="fl">球房名称</div>
-                <div class="text">粤美特国际台球俱乐部</div>
-            </div>
-            <div class="h90">
-                <div class="fl">所在地区</div>
-                <div class="text" v-show='!isSelectArea' @click='areaSelectVb = true;isSelectArea=true'>
-                    <span class="c66">请选择</span>&nbsp;省&nbsp;
-                    <span class="c66">请选择</span>&nbsp;市&nbsp;
-                    <span class="c66">请选择</span>&nbsp;区</div>
-                <div class="text" v-show='isSelectArea' @click='areaSelectVb = true'>
-                    <span class="c66">{{Province}}</span>&nbsp;-&nbsp;
-                    <span class="c66">{{city}}</span>&nbsp;-&nbsp;
-                    <span class="c66">{{region}}</span>&nbsp;</div>
-            </div>
-            <div class="h90">
-                <div class="fl">详细地址</div>
-                <div class="text">
-                    <input type="text" v-model='addressDetail' placeholder="请输入球房详细地址">
-                </div>
-            </div>
-            <div class="h90">
-                <div class="fl">球房电话</div>
-                <div class="text">
-                    <input type="text" v-model='addressDetail' placeholder="请输入球房电话" ref="upimg">
-                </div>
-            </div>
-            <div class="h90">
-                <div class="fl">营业时间</div>
-                <div class="text" @click='timeSelectVb = true'>
-                    <span class="c66">{{starHour}}:{{starMin}}</span>&nbsp; 至 &nbsp;
-                    <span class="c66">{{endHour}}:{{endMin}}</span>
-                </div>
-            </div>
-            <div class="uploadImg">
-                <div class="fl">营业执照</div>
-                <div class="img" @click='upimgClick'>
-                    <img :src="src" alt="">
-                    <input type="file" class='uploadInput' @change="fileChange($event)" ref='upimg'>
-                    <i class="iconfont icon-jia" @click='upimgClick'></i>
-                </div>
-            </div>
-            <div class="h90">
-                <div class="fl">注册手机</div>
-                <div class="text"><input type="text" placeholder="请输入手机号码"></div>
-            </div>
-            <div class="h90">
-                <div class="fl tar">验证码</div>
-                <div class="text"><input type="text" placeholder="请输入验证码"></div>
-            </div>
-            <div class="h90">
-                <div class="fl ">登录密码</div>
-                <div class="text"><input type="password" placeholder="请输入密码"></div>
-            </div>
-        </div>
-        <div class="end" @click='doduty'>
-            <div class="fl yuan">
-                <i class="iconfont icon-chenggong" v-if='responsibility'></i>
-            </div>
-            <div class="text">本申请表格锁填内容正确无误,如因本人提交的资料有误而造成的一切后果及责任由本人承担。</div>
-        </div>
-        <div class="p24">
-            <div class="cfmbtn">立即申请</div>
-        </div>
-        <div class="bottom">
-            <mt-popup v-model="areaSelectVb" position="bottom">
-                <mt-picker :slots="addressSlots" @change="addressChange"></mt-picker>
-            </mt-popup>
-            <mt-popup v-model="timeSelectVb" position="bottom">
-                <mt-picker :slots="timeSelectSlots" @change="timeChange"></mt-picker>
-            </mt-popup>
-        </div>
+  <div class="joinUs">
+    <div class="title">
+      <router-link to="home">
+        <i class="iconfont icon-fanhui1 fl"></i>
+      </router-link>
+      球房加盟
     </div>
+    <div class="content">
+      <div class="h90">
+        <div class="fl">球房名称</div>
+        <div class="text">粤美特国际台球俱乐部</div>
+      </div>
+      <div class="h90">
+        <div class="fl">所在地区</div>
+        <div class="text" v-show='!isSelectArea' @click='areaSelectVb = true;isSelectArea=true'>
+          <span class="c66">请选择</span>&nbsp;省&nbsp;
+          <span class="c66">请选择</span>&nbsp;市&nbsp;
+          <span class="c66">请选择</span>&nbsp;区</div>
+        <div class="text" v-show='isSelectArea' @click='areaSelectVb = true'>
+          <span class="c66">{{Province}}</span>&nbsp;-&nbsp;
+          <span class="c66">{{city}}</span>&nbsp;-&nbsp;
+          <span class="c66">{{region}}</span>&nbsp;</div>
+      </div>
+      <div class="h90">
+        <div class="fl">详细地址</div>
+        <div class="text">
+          <input type="text" v-model='addressDetail' placeholder="请输入球房详细地址">
+        </div>
+      </div>
+      <div class="h90">
+        <div class="fl">球房电话</div>
+        <div class="text">
+          <input type="text" v-model='addressDetail' placeholder="请输入球房电话" ref="upimg">
+        </div>
+      </div>
+      <div class="h90">
+        <div class="fl">营业时间</div>
+        <div class="text" @click='timeSelectVb = true'>
+          <span class="c66">{{starHour}}:{{starMin}}</span>&nbsp; 至 &nbsp;
+          <span class="c66">{{endHour}}:{{endMin}}</span>
+        </div>
+      </div>
+      <div class="uploadImg">
+        <div class="fl">营业执照</div>
+        <div class="img" @click='upimgClick'>
+          <img :src="src" alt="">
+          <input type="file" class='uploadInput' @change="fileChange($event)" ref='upimg'>
+          <i class="iconfont icon-jia" @click='upimgClick'></i>
+        </div>
+      </div>
+      <div class="h90">
+        <div class="fl">注册手机</div>
+        <div class="text"><input type="text" placeholder="请输入手机号码"></div>
+      </div>
+      <div class="h90">
+        <div class="fl tar">验证码</div>
+        <div class="text"><input type="text" placeholder="请输入验证码"></div>
+      </div>
+      <div class="h90">
+        <div class="fl ">登录密码</div>
+        <div class="text"><input type="password" placeholder="请输入密码"></div>
+      </div>
+    </div>
+    <div class="end" @click='doduty'>
+      <div class="fl yuan">
+        <i class="iconfont icon-chenggong" v-if='responsibility'></i>
+      </div>
+      <div class="text">本申请表格锁填内容正确无误,如因本人提交的资料有误而造成的一切后果及责任由本人承担。</div>
+    </div>
+    <div class="p24">
+      <div class="cfmbtn" @click='apply'>立即申请</div>
+    </div>
+    <div class="bottom">
+      <mt-popup v-model="areaSelectVb" position="bottom">
+        <mt-picker :slots="addressSlots" @change="addressChange"></mt-picker>
+      </mt-popup>
+      <mt-popup v-model="timeSelectVb" position="bottom">
+        <mt-picker :slots="timeSelectSlots" @change="timeChange"></mt-picker>
+      </mt-popup>
+    </div>
+  </div>
 
 </template>
 
 <script >
 import { Picker } from "mint-ui";
+import { Toast } from "mint-ui";
 import myaddress from "./pca.json";
 export default {
   data() {
@@ -260,6 +261,26 @@ export default {
           _this.src = e.target.result;
         };
       }
+    },
+    apply() {
+      if (!this.responsibility) {
+        Toast({
+          message: "请阅读并勾选免责声明",
+          position: "middle",
+          duration: 1500
+        });
+      } else {
+        Toast({
+          message: "成功发送申请请求",
+          position: "middle",
+          iconClass: "iconfont icon-chenggong",
+          className: "joinUs-icon",
+          duration: 2000
+        });
+        setTimeout(() => {
+         this.$router.push({ path: 'apply' })
+        }, 1000);
+      }
     }
   },
   components: {},
@@ -273,6 +294,7 @@ export default {
 @import "../../../../../common/css/common.less";
 .joinUs {
   width: 100%;
+  overflow-x: hidden;
   .title {
     padding: 0 0.32rem;
     i {
@@ -317,10 +339,11 @@ export default {
     border-radius: 50%;
     i.icon-chenggong {
       color: #0bc0fe;
-      font-size: 0.1867rem;
+      font-size: 0.3rem;
       position: absolute;
-      top: 0.0267rem;
-      left: 0.0267rem;
+      left: 0.0599rem;
+      bottom: 0.01167rem
+
     }
     &::before {
       border-radius: 50%;
@@ -397,6 +420,11 @@ export default {
 </style>
 
 <style lang="less">
+.joinUs-icon {
+  .icon-chenggong {
+    font-size: 1.0667rem;
+  }
+}
 .joinUs {
   .mint-popup-bottom {
     width: 100%;

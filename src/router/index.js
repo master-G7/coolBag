@@ -18,6 +18,7 @@ import mybook from '../components/index/mine/mybook/mybook.vue'
 import bookinfo from '../components/index/mine/mybook/bookinfo.vue'
 import map from '../components/map/map.vue'
 import joinUs from '../components/index/home/bookinginfo/joinUs/joinUs.vue'
+import apply from '../components/index/home/bookinginfo/joinUs/apply.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -60,6 +61,11 @@ export default new Router({
       path: '/joinUs',
       component: joinUs,
       meta:{index:5}
+    },
+    {
+      path: '/apply',
+      component: apply,
+      meta:{index:6}
     },
     {
       path: '/infoConfirm',
