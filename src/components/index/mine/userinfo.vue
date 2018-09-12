@@ -3,7 +3,6 @@
     <div class="top">
       <div class="userimg"><img src="../../../../static/konglong.png" alt=""></div>
       <div class="username ">陈小皮的幸福生活</div>
-      <div class=""></div>
     </div>
     <div class="userTab clearfix">
       <div class="w33 fl br">
@@ -60,24 +59,26 @@
           <div class="text">退款/售后</div>
         </div>
       </div>
-      <div class="tab-row">
-        <div class="w25 fl">
-          <img src="../../../assets/userinfo/fuwu.png" alt="">
-          <div class="text">我的服务</div>
+        <div class="tab-row">
+      <router-link to="myService">
+          <div class="w25 fl">
+            <img src="../../../assets/userinfo/fuwu.png" alt="">
+            <div class="text">我的服务</div>
+          </div>
+      </router-link>
+          <div class="w25 fl">
+            <img src="../../../assets/userinfo/shoucang.png" alt="">
+            <div class="text">我的收藏</div>
+          </div>
+          <div class="w25 fl">
+            <img src="../../../assets/userinfo/guanzhu.png" alt="">
+            <div class="text">我的关注</div>
+          </div>
+          <div class="w25 fl">
+            <img src="../../../assets/userinfo/qiufang.png" alt="">
+            <div class="text">球房管理</div>
+          </div>
         </div>
-        <div class="w25 fl">
-          <img src="../../../assets/userinfo/shoucang.png" alt="">
-          <div class="text">我的收藏</div>
-        </div>
-        <div class="w25 fl">
-          <img src="../../../assets/userinfo/guanzhu.png" alt="">
-          <div class="text">我的关注</div>
-        </div>
-        <div class="w25 fl">
-          <img src="../../../assets/userinfo/qiufang.png" alt="">
-          <div class="text">球房管理</div>
-        </div>
-      </div>
       <div class="tab-row">
         <div class="w25 fl">
           <img src="../../../assets/userinfo/xiugai.png" alt="">

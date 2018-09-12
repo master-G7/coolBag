@@ -417,7 +417,9 @@ export default {
         border-radius: 0.2667rem;
         height: 9.4667rem;
         padding: 0.3733rem 0.48rem 0 0.48rem;
+        width: 100%;
         .booktitle {
+          width: 100%;
           font-size: 0.4rem;
           color: #333;
           font-weight: bold;
@@ -427,6 +429,7 @@ export default {
         }
         .form {
           font-size: 0.4rem;
+          width: 100%;
           .confirm {
             padding: 0 1.2rem;
             .border-1pxTop(#dcdcdc,solid);

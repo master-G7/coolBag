@@ -1,6 +1,6 @@
 <template>
     <div class="hotList">
-        <div class="title">
+        <div class="title" v-show='isshowtitle'>
             <span>全部
                 <i class="iconfont icon-xialajiantou"></i>
             </span>
@@ -14,7 +14,7 @@
                 <i class="iconfont icon-xialajiantou"></i>
             </span>
         </div>
-        <router-link :to='{path:"/bookinginfo"}'>
+        <router-link :to='address'>
             <div class="content">
                 <div class="info">
                     <div class="left fl">
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </router-link>
-        <div class="content">
+        <!-- <div class="content">
             <div class="info">
                 <div class="left fl">
                     <div class="text">A+</div>
@@ -245,13 +245,17 @@
                 </div>
                 <div class="place fl">打球场馆：粤美特桌球俱乐部</div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script >
 import star from "../star/star";
 export default {
+  props: {
+    address: String,
+    isshowtitle: Boolean,
+  },
   data() {
     return {};
   },
@@ -288,23 +292,23 @@ export default {
   .content {
     padding: 0 0.3333rem;
     height: 4.1333rem;
-      .position {
-    padding: 0.2667rem 0 0.5333rem 0;
-    color: black;
-    i {
-      font-size: 0.3733rem;
-      display: inline-block;
-      position: relative;
-      top: 0.0267rem;
+    .position {
+      padding: 0.2667rem 0 0.5333rem 0;
+      color: black;
+      i {
+        font-size: 0.3733rem;
+        display: inline-block;
+        position: relative;
+        top: 0.0267rem;
+      }
+      height: 1.68rem;
+      .time {
+        width: 100%;
+      }
+      .tip {
+        font-size: 0.2667rem;
+      }
     }
-    height: 1.68rem;
-    .time {
-      width: 100%;
-    }
-    .tip {
-      font-size: 0.2667rem;
-    }
-  }
     .info {
       height: 2.4rem;
       padding: 0.5333rem 0 0.2667rem 0;
@@ -387,6 +391,5 @@ export default {
     }
     .border-1pxTop(#dcdcdc,solid);
   }
-
 }
 </style>

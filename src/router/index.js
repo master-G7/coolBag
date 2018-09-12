@@ -19,6 +19,10 @@ import bookinfo from '../components/index/mine/mybook/bookinfo.vue'
 import map from '../components/map/map.vue'
 import joinUs from '../components/index/home/bookinginfo/joinUs/joinUs.vue'
 import apply from '../components/index/home/bookinginfo/joinUs/apply.vue'
+import myService from '../components/index/mine/myService/myService'
+import trainerRecord from '../components/index/mine/myService/teacherRecord'
+import trainerInfo from '../components/index/mine/myService/teachInfo'
+import teachInfoDetail from '../components/index/mine/myService/teachInfoDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -106,6 +110,26 @@ export default new Router({
       path: '/mybook',
       component: mybook,
       meta:{index:10}
+    },
+    {
+      path: '/myService',
+      component: myService,
+      meta:{index:12}
+    },
+    {
+      path: '/trainerRecord',
+      component: trainerRecord,
+      meta:{index:13}
+    },
+    {
+      path: '/trainerInfo',
+      component: trainerInfo,
+      meta:{index:13}
+    },
+    {
+      path: '/teachInfoDetail',
+      component: teachInfoDetail,
+      meta:{index:14}
     },
     {
       path: '/bookinfo',

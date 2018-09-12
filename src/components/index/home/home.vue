@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <top></top>
-    <list></list>
+    <list address='bookinginfo' :isshowtitle='true'></list>
     <backToTop></backToTop>
     <!-- <bottom></bottom> -->
   </div>
