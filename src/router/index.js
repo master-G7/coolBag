@@ -23,6 +23,9 @@ import myService from '../components/index/mine/myService/myService'
 import trainerRecord from '../components/index/mine/myService/teacherRecord'
 import trainerInfo from '../components/index/mine/myService/teachInfo'
 import teachInfoDetail from '../components/index/mine/myService/teachInfoDetail'
+import signing from '../components/index/mine/myService/signing'
+import mylike from '../components/index/mine/mylike/mylike'
+import myFollow from '../components/index/mine/myFollow/myFollow'
 Vue.use(Router)
 
 export default new Router({
@@ -112,6 +115,16 @@ export default new Router({
       meta:{index:10}
     },
     {
+      path: '/myFollow',
+      component: myFollow,
+      meta:{index:10}
+    },
+    {
+      path: '/mylike',
+      component: mylike,
+      meta:{index:10}
+    },
+    {
       path: '/myService',
       component: myService,
       meta:{index:12}
@@ -124,6 +137,11 @@ export default new Router({
     {
       path: '/trainerInfo',
       component: trainerInfo,
+      meta:{index:13}
+    },
+    {
+      path: '/signing',
+      component: signing,
       meta:{index:13}
     },
     {

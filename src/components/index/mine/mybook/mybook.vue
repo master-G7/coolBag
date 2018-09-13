@@ -16,7 +16,7 @@
                 <div class="bd"></div>
             </div>
         </div>
-        <list></list>
+        <list :isshowtitle='true' address='mybook'></list>
         <top></top>
     </div>
 </template>

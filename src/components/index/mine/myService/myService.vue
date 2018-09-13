@@ -32,10 +32,12 @@
           <div class="text">发布服务</div>
         </div>
       </router-link>
-      <div class="cell">
-        <div class="icon fl sign"></div>
-        <div class="text">签约球房</div>
-      </div>
+      <router-link to="signing">
+        <div class="cell">
+          <div class="icon fl sign"></div>
+          <div class="text">签约球房</div>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>

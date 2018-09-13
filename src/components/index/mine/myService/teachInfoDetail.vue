@@ -46,7 +46,31 @@
                             桌球哈巴狗
                             <div class="name">球手</div>
                         </div>
+                        <div class="fr">200m | 两天前 </div>
                     </div>
+                    <div class="middle">彭于晏 13888888888</div>
+                    <div class="msg">我是彭于晏,我最帅。</div>
+                    <div class="chooseBtn">选择</div>
+                </div>
+            </div>
+        </div>
+        <div class="choosebox">
+            <div class="head">1人已应约</div>
+            <div class="box">
+                <div class="left">
+                    <img src="../../../../assets/daima2.gif" alt="">
+                </div>
+                <div class="right">
+                    <div class="up">
+                        <div class="fl">
+                            桌球哈巴狗
+                            <div class="name">球手</div>
+                        </div>
+                        <div class="fr">200m | 两天前 </div>
+                    </div>
+                    <div class="middle">彭于晏 13888888888</div>
+                    <div class="msg">我是彭于晏,我最帅。</div>
+                    <div class="choosed ">已选择</div>
                 </div>
             </div>
         </div>
@@ -71,9 +95,11 @@ export default {
 <style scoped lang="less">
 @import "../../../../common/css/common.less";
 .teachInfoDetail {
+  position: fixed;
   width: 100%;
+  height: 100%;
+  background-color: #fff;
   .content {
-    background-color: #fff;
     padding: 0 0.3333rem;
     height: 4.1333rem;
     .position {
@@ -175,18 +201,20 @@ export default {
     }
   }
   .choosebox {
-    padding: 0 0.32rem;
+    padding: 0 0.32rem 0.5333rem 0.32rem;
     background-color: #fff;
     .head {
       color: #666;
       font-size: 0.3467rem;
     }
     .box {
+      margin-top: 0.2667rem;
       box-shadow: 0 0 0.1733rem #ccc;
       width: 100%;
       height: 2.5333rem;
       padding: 0.3733rem 0.32rem;
       position: relative;
+      color: #666;
       .left {
         float: left;
         img {
@@ -203,8 +231,8 @@ export default {
             color: black;
             font-size: 0.4rem;
             .name {
-                display: inline-block;
-                text-align: center;
+              display: inline-block;
+              text-align: center;
               color: #0cbffd;
               width: 0.7733rem;
               height: 0.3733rem;
@@ -220,6 +248,45 @@ export default {
             font-size: 0.2667rem;
             color: #999;
           }
+        }
+        .middle {
+          margin-top: 0.2667rem;
+          height: 0.32rem;
+          font-size: 0.32rem;
+        }
+        .msg {
+          margin-top: 0.2667rem;
+          font-size: 0.32rem;
+        }
+        .chooseBtn {
+          position: absolute !important;
+          right: 0.32rem;
+          bottom: 0.4rem;
+          width: 1.5733rem;
+          height: 0.72rem;
+          color: #0cbffd;
+          border-radius: 0.1067rem;
+          text-align: center;
+          line-height: 0.72rem;
+          &::before {
+            border-radius: 0.1067rem;
+          }
+          .border-all(#0cbffd,solid);
+        }
+        .choosed {
+          position: absolute !important;
+          right: 0.32rem;
+          bottom: 0.4rem;
+          width: 1.5733rem;
+          height: 0.72rem;
+          color: #999;
+          border-radius: 0.1067rem;
+          text-align: center;
+          line-height: 0.72rem;
+          &::before {
+            border-radius: 0.1067rem;
+          }
+          .border-all(#999,solid);
         }
       }
     }

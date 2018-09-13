@@ -29,7 +29,7 @@
                         </div>
                         <div class="star fl">
                             <div class="fl instar">
-                                <star :size='24' :score='3.9'></star>
+                                 <star :size='24' :score='3.9'></star>
                             </div>
                             <span>229m|1天前</span>
                         </div>
